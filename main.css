@@ -2,6 +2,7 @@
     width: 100%;
     background-color: blue;
 }
+
 h1 {
     font-family: 'Indie Flower', cursive;
     color: yellow;
@@ -9,18 +10,28 @@ h1 {
     text-align: center;
     margin: auto;
 }
-
 .white {color: white; font-size: 6rem;}
 
-#peter_chicken {}
+#peter_chickenDiv {}
 #peter {}
-
 #chicken {float: right;}
-
 .images {}
 
 .clearFloat {
     clear: both;
     margin: 0;
     padding: 0;
+}
+
+#point_buttonsDiv {}
+#peterPoints {
+    margin-left: 7em;
+}
+#chickenPoints {
+    float: right;
+    margin-right: 7em;
+}
+.pointButtons {
+    width: 300px;
+    height: 100px;
 }
