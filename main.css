@@ -1,0 +1,26 @@
+#header {
+    width: 100%;
+    background-color: blue;
+}
+h1 {
+    font-family: 'Indie Flower', cursive;
+    color: yellow;
+    font-size: 9em;
+    text-align: center;
+    margin: auto;
+}
+
+.white {color: white; font-size: 6rem;}
+
+#peter_chicken {}
+#peter {}
+
+#chicken {float: right;}
+
+.images {}
+
+.clearFloat {
+    clear: both;
+    margin: 0;
+    padding: 0;
+}
