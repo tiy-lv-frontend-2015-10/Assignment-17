@@ -1,5 +1,5 @@
 body {
-  background: url("http://vignette3.wikia.nocookie.net/starwars/images/7/72/Hyperspace-SWPuzzle.jpg/revision/latest?cb=20101018151244");
+  background: #1D2123;
 }
 
 img {
@@ -32,4 +32,50 @@ img {
   margin-top: 50px;
   margin-left: 140px;
   float: left;
+}
+
+.buttonContainer {
+  background: #eae3c6;
+  margin-top: -2px;
+  padding-top: 7px;
+  padding-bottom: 5px;
+}
+
+.flow {
+  margin-left: 50px;
+  background-color: #607b5e;
+  color: #eae3c6;
+  border-radius: 2em;
+  border-style: none;
+}
+
+.cred {
+  background-color: #a7382e;
+  color: #eae3c6;
+  margin-left: 30px;
+  border-radius: 2em;
+  border-style: none;
+
+}
+
+.sc {
+  border-top: 2px solid #59626d;
+  padding-top: 7px;
+  color: #59626d;
+  background: #eae3c6;
+}
+
+.descriptionBox {
+  background-color: #CDD7B6;
+  border: 1px solid white;
+  width: 300px;
+  height: 50px;
+  position: relative;
+  top: 13em;
+  left: 30em;
+}
+
+#description {
+  position: relative;
+  bottom: 15em;
 }
