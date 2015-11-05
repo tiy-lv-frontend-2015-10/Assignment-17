@@ -8,15 +8,18 @@ $(document).ready(function(){
 	};
 
 	function comparison(playerArr,simonArr) {
-		if(playerArr.length!==simonArr.length) return false;{
+
 			for(var i=0; i<simonArr.length; i++)
-				if(playerArr[i]!==simonArr[i]) {
-					return false;
-				} else {
-					return true;
-				}
-		}
+				if(playerArr[i]===simonArr[i]) {
+					console.log(true);
+					
+		} else {
+			console.log(false);
 	}
+
+	};
+
+
 	
 	$("#start").on('click',function(){
 		
@@ -27,68 +30,46 @@ $(document).ready(function(){
 
 	$("#red").on('click',function(){
 		playerArr.push(1);
-		console.log(playerArr);
 		comparison(playerArr,simonArr);
+		simonArr.push(randomRange(1,4));
+		console.log(playerArr);
+		$("#playerDiv").html(playerArr);
+		$("#simonDiv").html(simonArr);
+	
 	
 	});
 	$("#blue").on('click',function(){
 		playerArr.push(2);
+		comparison(playerArr,simonArr);
+		simonArr.push(randomRange(1,4));
 		console.log(playerArr);
+		$("#playerDiv").html(playerArr);
+		$("#simonDiv").html(simonArr);
 	
 	});
 	$("#yellow").on('click',function(){
 		playerArr.push(3);
+		comparison(playerArr,simonArr);
+		simonArr.push(randomRange(1,4));
 		console.log(playerArr);
-		
+		$("#playerDiv").html(playerArr);
+		$("#simonDiv").html(simonArr);
+	
 	});
 	$("#green").on('click',function(){
 		playerArr.push(4);
-		console.log(playerArr);
-		
-	});
-	// 	if(playerArr.length===simonArr.length) {
-
-	// 	if(playerArr.length&&simonArr.length===1) {
-	// 	simonArr.push(randomRange(1,4));
-	// }
-	$("#red").on('click',function(){
-		
-		$("#playerDiv").html(playerArr);
+		comparison(playerArr,simonArr);
 		simonArr.push(randomRange(1,4));
-		$("#simonDiv").html(simonArr);	
 		console.log(playerArr);
+		$("#playerDiv").html(playerArr);
+		$("#simonDiv").html(simonArr);
 	
 	});
-	$("#blue").on('click',function(){
-		
-		$("#playerDiv").html(playerArr);
-		simonArr.push(randomRange(1,4));
-		$("#simonDiv").html(simonArr);
-		console.log(playerArr);
-	
-	});
-	$("#yellow").on('click',function(){
-		
-
-
-		$("#playerDiv").html(playerArr);
-		simonArr.push(randomRange(1,4));
-		$("#simonDiv").html(simonArr);
-		console.log(playerArr);
-
-	});
-	$("#green").on('click',function(){
-			
-		$("#playerDiv").html(playerArr);
-		simonArr.push(randomRange(1,4));
-		$("#simonDiv").html(simonArr);
-		console.log(playerArr);
-	
-	});
-
-// }
 
 });
+	
+
+
 	
 	
 
