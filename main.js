@@ -34,23 +34,23 @@ var Enemy1 = function () {
   };
 };
 
-	var p1 = new Player1();
-	var p2 = new Enemy1();
+	// var p1 = new Player1();
+	// var p2 = new Enemy1();
 
-	p1.name = "Deadpool";
-	p2.name = "Zombie";
+	// p1.name = "Deadpool";
+	// p2.name = "Zombie";
 
-		p1.attack(p2);
-		alert(p1.name + " has attacked " + p2.name + " ,now " + p2.health + " health left");
-		Player1.prototype.heal = function (player) {
-		  player.health += 5;
-		}
+	// 	p1.attack(p2);
+	// 	alert(p1.name + " has attacked " + p2.name + " ,now " + p2.health + " health left");
+	// 	Player1.prototype.heal = function (player) {
+	// 	  player.health += 5;
+	// 	}
 
-		p2.attack(p1);
-		alert(p2.name + " bit " + p1.name + " now has " + p1.health + " health left");
+	// 	p2.attack(p1);
+	// 	alert(p2.name + " bit " + p1.name + " now has " + p1.health + " health left");
 
-		p1.heal(p1);
-		alert(p1.name + " ate a chimichanga and now has " + p1.health + " health left");
+	// 	p1.heal(p1);
+	// 	alert(p1.name + " ate a chimichanga and now has " + p1.health + " health left");
 
 
 
