@@ -1,0 +1,29 @@
+.button {
+	height:100px;
+	width:100px;
+}
+
+#red {
+	background: red;
+}
+
+#blue {
+	background: blue;
+}
+
+#yellow {
+	background: yellow;
+}
+
+#green {
+	background: green;
+
+}
+
+#start {
+	height:50px;
+	width: 100px;
+}
+span {
+	display: block;
+}
