@@ -1,14 +1,34 @@
 .button {
 	height:100px;
 	width:100px;
+	outline: none;
+	border:none;
 }
 
 #red {
 	background: red;
+
 }
+
+#red:not(:active){
+	transition:background-color 500ms;
+}
+
+#red:active {
+	background: #e15f5f;
+}
+
 
 #blue {
 	background: blue;
+}
+
+#blue:not(:active){
+	transition:background-color 500ms;
+}
+
+#blue:active {
+	background: #486fdb;
 }
 
 #yellow {
@@ -23,6 +43,11 @@
 #start {
 	height:50px;
 	width: 100px;
+}
+#playAgain {
+	height:50px;
+	width: 100px;
+	display: none;
 }
 span {
 	display: block;

@@ -14,6 +14,11 @@ $(document).ready(function(){
 		$("#simonDiv").html("");
 	}
 
+	function playerReset() {
+		playerArr=[];
+		$("#playerDiv").html("");
+	}
+
 	function comparison(playerArr,simonArr) {
 
 			for(var i=0; i<simonArr.length; i++)
@@ -23,6 +28,8 @@ $(document).ready(function(){
 		} else {
 			console.log(false);
 			reset();
+			$("#start").hide();
+			$("#playAgain").show();
 
 	}
 
@@ -40,6 +47,18 @@ $(document).ready(function(){
 
 	});
 
+	$("#playAgain").on('click',function(){
+		
+		simonArr.push(randomRange(1,4));
+		if(simonArr.length>1) {
+			simonArr=[randomRange(1,4)];
+		}
+		$("#simonDiv").html(simonArr);
+		$("#start").show();
+		$("#playAgain").hide();
+
+	});
+
 	$("#red").on('click',function(){
 		playerArr.push(1);
 		comparison(playerArr,simonArr);
@@ -47,7 +66,6 @@ $(document).ready(function(){
 		console.log(playerArr);
 		$("#playerDiv").html(playerArr);
 		$("#simonDiv").html(simonArr);
-	
 	
 	});
 	$("#blue").on('click',function(){
