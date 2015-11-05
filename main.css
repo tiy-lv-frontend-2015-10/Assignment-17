@@ -10,6 +10,9 @@ h1 {
     text-align: center;
     margin: auto;
 }
+h2 {
+    text-transform: uppercase;
+}
 
 .white {
     color: white;
@@ -28,30 +31,22 @@ h1 {
 
 .images {}
 
-#textArea {
-    width: 40rem;
-    height: 25rem;
-    float: left;
-    border: 2px solid black;
-    text-align: center;
-    margin: 8em 0 0 1em;
-}
-
 .clearFloat {
     clear: both;
     margin: 0px;
     padding: 0px;
 }
 
-#point_buttonsDiv {}
+#buttonsDiv {
+    text-align: center;
+}
 
 #peterPointsBtn {
-    margin-left: 7em;
+    margin-left: ;
 }
 
 #chickenPointsBtn {
-    float: right;
-    margin-right: 7em;
+    margin-left: ;
 }
 
 .pointButtons {
@@ -59,6 +54,15 @@ h1 {
     height: 100px;
     color: white;
     background-color: green;
+}
+.attackButtons {
+    
+}
+#attackPeterBtn {
+    margin-left: ;
+}
+#attackChickenBtn {
+    margin-left: ;
 }
 
 #playBtn {
