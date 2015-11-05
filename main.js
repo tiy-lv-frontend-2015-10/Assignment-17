@@ -7,6 +7,13 @@ $(document).ready(function(){
 		return Math.floor(Math.random()*4 +1);
 	};
 
+	function reset() {
+		playerArr=[];
+		simonArr=[];
+		$("#playerDiv").html("");
+		$("#simonDiv").html("");
+	}
+
 	function comparison(playerArr,simonArr) {
 
 			for(var i=0; i<simonArr.length; i++)
@@ -15,6 +22,8 @@ $(document).ready(function(){
 					
 		} else {
 			console.log(false);
+			reset();
+
 	}
 
 	};
@@ -24,6 +33,9 @@ $(document).ready(function(){
 	$("#start").on('click',function(){
 		
 		simonArr.push(randomRange(1,4));
+		if(simonArr.length>1) {
+			simonArr=[randomRange(1,4)];
+		}
 		$("#simonDiv").html(simonArr);
 
 	});
