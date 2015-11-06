@@ -11,18 +11,20 @@ function Player(container) {
   this.flow = function(opponent) {
     var flowChance = Math.random();
     if (flowChance > .4) {
-      opponent.streeCred -= minMax(1,11);
-      opponent.container.find('.credPoints').html(opponent.streetCred -= minMax(1, 11));
+      opponent.streetCred -= minMax(1,11);
+      opponent.container.find('.credPoints').html(opponent.streetCred);
+      $('#description').html("YO!! You hit him with that flow! Next players turn!");
     } else {
-      $('#description').html("YO!! the flow is weak in " + this.name + "." + " Next players turn!");
+      $('#description').html("YO!! The flow is weak in " + this.name + "." + " Next players turn!");
     }
   }
   this.cred = function(player) {
     var credChance = Math.random();
     if (credChance > .5) {
-      $('.credPoints').html(player.streetCred += minMax(1, 20));
+      player.container.find('.credPoints').html(player.streetCred += minMax(1, 20));
+      $('#description').html("My street cred game is tight! Next players turn!");
     } else {
-      $('#description').html(this.name + " street cred is messed up and could gain anymore!")
+      $('#description').html(this.name + " street cred is messed up and could gain anymore!");
     }
   }
 }
@@ -33,6 +35,7 @@ var player2 = new Player('.player2');
 
 player1.name = "Gangsta Chewie";
 player2.name = "Thug Trooper";
+
 
 
 $(".flow.player1").on('click', function() {
