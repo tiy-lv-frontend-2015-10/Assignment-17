@@ -23,17 +23,12 @@ $(document).ready(function(){
 		var arr2 = array2.slice(0, len1);
 
 		if (arraysEqual(array1, arr2)){
-			console.log(true);
-			
 
-			$("#playerDiv").html("");
-			$("#playerDiv").html(array1);
-			console.log(array1);
 		} else {
 			console.log(false);
 			reset();
 			$("#start").hide();
-			$("#playAgain").show();
+			$("#playAgain").show().css("display","block");
 		}
 		if(array1.length===array2.length) {
 			playerArr=[];
@@ -57,58 +52,48 @@ $(document).ready(function(){
 		if(simonArr.length>1) {
 			simonArr=[randomRange(1,4)];
 		}
-		$("#simonDiv").html(simonArr);
+	
 
 	});
 
 	$("#playAgain").on('click',function(){
 		
 		simonArr.push(randomRange(1,4));
+		$(".button"+simonArr[0]).addClass("glow");
+
+		if($(".button").hasClass("glow")===true) {
+					setTimeout(function(){
+				$(".button").removeClass("glow");
+					},400);
+				};
 		if(simonArr.length>1) {
 			simonArr=[randomRange(1,4)];
 		}
-		$("#simonDiv").html(simonArr);
+	
 		$("#start").show();
 		$("#playAgain").hide();
+
 
 	});
 
 	$("#red").on('click',function(){
 		playerArr.push(1);
 		checker(playerArr,simonArr);
-		console.log(playerArr);
-		console.log(simonArr);
-		$("#playerDiv").html(playerArr);
-		$("#simonDiv").html(simonArr);
 
 	});
 	$("#blue").on('click',function(){
 		playerArr.push(2);
 		checker(playerArr,simonArr);
-		console.log(playerArr);
-		console.log(simonArr);
-		$("#playerDiv").html(playerArr);
-		$("#simonDiv").html(simonArr);
-
 
 	});
 	$("#yellow").on('click',function(){
 		playerArr.push(3);
 		checker(playerArr,simonArr);
-		console.log(playerArr);
-		console.log(simonArr);
-		$("#playerDiv").html(playerArr);
-		$("#simonDiv").html(simonArr);
 
 	});
 	$("#green").on('click',function(){
 		playerArr.push(4);
 		checker(playerArr,simonArr);
-		console.log(playerArr);
-		console.log(simonArr);
-		$("#playerDiv").html(playerArr);
-		$("#simonDiv").html(simonArr);
-
 	});
 
 	function animate(index) {
