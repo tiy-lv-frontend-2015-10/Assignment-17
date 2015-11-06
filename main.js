@@ -4,21 +4,9 @@ $(document).ready(function(){
 	var playerArr=[];
 	var simonArr=[];
 	
-	function animate(index) {
-		setTimeout(function() {
-			if(index!==simonArr.length-1) {
-				$(".button"+simonArr[index]).css("background","white");
-			}
-			index+=1
-
-			animate(index);
 
 
-		},1000)
-		
-	}
 
-animate(0);
 	
 	function randomRange(min,max) {
 		return Math.floor(Math.random()*4 +1);
@@ -50,6 +38,7 @@ animate(0);
 		if(array1.length===array2.length) {
 			playerArr=[];
 			simonArr.push(randomRange(1,4));
+			animate(0);
 
 		} 
 	};
@@ -115,7 +104,20 @@ animate(0);
 
 	});
 
-	
+	function animate(index) {
+		setTimeout(function() {
+			if(index!==simonArr.length) {
+				$(".button"+simonArr[index]).addClass("test");
+				console.log(simonArr[index]);
+				index+=1
+				animate(index);
+			} 
+		},1000)
+
+		
+	}
+
+		
 
 	function arraysEqual(a, b) {
 		if (a === b) return true;
