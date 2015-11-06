@@ -3,9 +3,17 @@ $(document).ready(function(){
 var Player1 = function () {
   	this.name;
   	this.health = 150;
-  	this.attack = function (opponent) {
+  	this.punch = function (opponent) {
     var hitAccuracy = Math.random();
-    if (hitAccuracy > .2) {
+    if (hitAccuracy > .4) {
+      opponent.health -= 10;
+    } else {
+      console.log("It's been kind of a rough day");
+    }
+  };
+    this.kick = function (opponent) {
+    var hitAccuracy = Math.random();
+    if (hitAccuracy > .3) {
       opponent.health -= 10;
     } else {
       console.log("It's been kind of a rough day");

@@ -26,7 +26,8 @@ body {
 	width: 25%;
 }
 
-.deadpool {
+#deadpool {
+	display: none;
 	width: 300px;
 	height: 320px;
 	position: relative;
@@ -36,7 +37,8 @@ body {
 	left: 10px;
 }
 
-.buttons{
+#buttons{
+	display: none;
 	list-style: none;
 	margin: 0px;
 	padding: 0px;
@@ -45,7 +47,7 @@ body {
 
 }
 
-.buttons li{
+#buttons li{
 	float: left;
 	position: relative;
 	border: 1px solid black;
@@ -63,9 +65,23 @@ body {
 	border: 1px solid white;
 	border-radius: 20px;
 	width: 49%;
-	height: 320px;
-	top: 50px;
+	height: 220px;
+}
 
+#start{
+	position: relative;	
+	width: 175px;
+	height: 50px;
+	bottom: 10px;
+	top: 50px;
+	left: 225px;
+	border: 2px solid red;
+	border-radius: 200px;
+	background-color: #A7A7A7;
+	color: black;
+	font-family: 'Shadows Into Light', cursive;
+	font-size: 30px;
+	text-align: center;
 }
 
 #zombies {
@@ -73,7 +89,8 @@ body {
 	width: 25%;
 }
 
-.zombie {
+#zombie1 {
+	display: none;
 	width: 300px;
 	height: 320px;
 	position: relative;
@@ -95,4 +112,8 @@ footer {
 	font-size: 20px;
 	margin-top: 20px;
 	color: white;
+}
+
+.displayNone {
+	display: none;
 }
