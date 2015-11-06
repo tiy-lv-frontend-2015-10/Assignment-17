@@ -108,14 +108,25 @@ $(document).ready(function(){
 		setTimeout(function() {
 			if(index!==simonArr.length) {
 				$(".button"+simonArr[index]).addClass("test");
+
+				if($(".button").hasClass("test")===true) {
+					setTimeout(function(){
+				$(".button").removeClass("test");
+					},1000);
+			};
 				console.log(simonArr[index]);
 				index+=1
 				animate(index);
 			} 
 		},1000)
 
+		}
+			
+			
+
 		
-	}
+	
+
 
 		
 
