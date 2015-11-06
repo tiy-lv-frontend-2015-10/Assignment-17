@@ -33,28 +33,17 @@ p2.attack(p1);
     };
      
     
-//experimental youtube api    
-var tag = document.createElement('script');
-tag.src = "https://www.youtube.com/iframe_api";
-      var firstScriptTag = document.getElementsByTagName('script')[0];
-      firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+
 function PlayVideo() {
-    //this.load();??//add youtube video link
     this.play = function() {
-        var = player;
-        function onYouTubeIframeAPIReady() {
-        player = new YT.Player('player', {
-            height: '390',
-            width: '640',
-            videoId: 'W4WGQmWcrbs',
-            events: {
-                'onReady': onPlayerReady,
-                'onStateChange': onPlayerStateChange
-            }
-    });
-}
-}
-}
+           var videoFile = $(this).Attr('videofile');
+           var videoPoster = $(this).Attr('videofile');
+           var videoWidth = Number($(this).Attr('videowidth'));
+           var videoHeight = Number($(this).Attr('videoheight'));
+           var videoCode = "https://www.youtube.com/embed/W4WGQmWcrbs";
+           $('#videoPlayer').html(videoCode);
+       };
+    }
     
 var punchesChicken = new PlayVideo();
 var throwsChicken = new PlayVideo();
@@ -68,7 +57,7 @@ var punchesPeter = new PlayVideo();
 var peterDies = new PlayVideo();
 var chickenDies = new PlayVideo();
     
-punchesChicken.play = ;//start time & duration 2:48
+punchesChicken.play = $('#punchesChickenBtn').click;//start time & duration 2:48
 throwsChicken.play = ;//start time 2:55
 clubsChicken.play = ;//start time 3:04
 stranglesChicken.play = ;//start time 4:03
