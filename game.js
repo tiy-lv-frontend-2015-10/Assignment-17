@@ -1,4 +1,4 @@
-
+$(document).ready (function() {
 
 
 function Player () {
@@ -50,7 +50,7 @@ Player.prototype.attack4 = function attack4 (targetOwner) {
 };
 
 p1.attack4(p2);
-alert(p1.name + " has dug up the garden and " + p2.name + " has " + p2.sanity + " sanity points left, and gives " + p1.name + " a Benadryl and has some alcohol.");
+alert(p1.name + " has dug up the garden and uncovered the Sarlaac and " + p2.name + " has " + p2.sanity + " sanity points left, and gives " + p1.name + " a Benadryl and has some alcohol.");
 
 //Creates the good stuff //
 
@@ -67,8 +67,13 @@ Player.prototype.cuddle = function cuddle (targetOwner) {
 
 p1.cuddle(p2);
 alert(p1.name + " cuddles up to " + p2.name + " and " + p2.name + "' blood pressure drops and he has " + p2.sanity + " sanity points left.");
-	
 
+//Adds the DOM Events
+
+document.getElementbyID('attack1Button').addEventListener("click", function(){alert(p2.name + " found his sneakers eaten and has " + p2.sanity + " sanity points left.");})
+
+
+});
 
 
 

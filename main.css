@@ -1,9 +1,56 @@
+body {
+	width: 900px;
+	margin: 0 auto;
+	padding: 0 0 0 0;
+	background: black;
+}
+
 h1 {
 	font-family: "ABeeZee";
 	text-align: center;
 }
 
-p {
-	font-family: "ABeeZee";
+
+#top {
+	width: 900px;
+	height: 40px;
+	margin: 0 auto;
+	padding: 0 0 0 0;
+}
+
+#top img {
+	width: 900px;
+	height: 72px;
+	margin: 0 auto;
+	padding: 0 0 0 0;
+}
+
+#firstp {
+	color: white;
 	font-size: 13px;
+	font-weight: bold;
+	margin-top: 100px;
+	font-family: "Arial", "sans-serif";
+	text-align: center;
+	width: 250px;
+	height: 100px;
+}
+
+#attackButtons {
+	position: absolute;
+	top: 460px;
+}
+
+#attackButtons img {
+	width: 100px;
+	height: 41px;
+}
+
+#healButtons {
+	position: absolute;
+	top: 525px;
+}
+#healButtons img {
+	width: 100px;
+	height: 41px;
 }
