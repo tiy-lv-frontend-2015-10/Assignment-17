@@ -47,6 +47,12 @@ img {
   color: #eae3c6;
   border-radius: 2em;
   border-style: none;
+  outline: none;
+}
+
+.flow:active {
+  background-color: #1d73d6;
+  box-shadow:
 }
 
 .cred {
@@ -55,7 +61,11 @@ img {
   margin-left: 30px;
   border-radius: 2em;
   border-style: none;
+  outline: none;
+}
 
+.cred:active {
+  background-color: #1d73d6;
 }
 
 .sc {
@@ -100,4 +110,8 @@ img {
   border-style: none;
   font-size: 15px;
   background-color: #FFE545;
+}
+
+#reset button:active {
+  background-color: #e87e50;
 }
