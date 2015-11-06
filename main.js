@@ -4,8 +4,21 @@ $(document).ready(function(){
 	var playerArr=[];
 	var simonArr=[];
 	
-	
-	
+	function animate(index) {
+		setTimeout(function() {
+			if(index!==simonArr.length-1) {
+				$(".button"+simonArr[index]).css("background","white");
+			}
+			index+=1
+
+			animate(index);
+
+
+		},1000)
+		
+	}
+
+animate(0);
 	
 	function randomRange(min,max) {
 		return Math.floor(Math.random()*4 +1);
@@ -16,37 +29,7 @@ $(document).ready(function(){
 		simonArr=[];
 		$("#playerDiv").html("");
 		$("#simonDiv").html("");
-	}
-
-	
-
-	// function comparison(playerArr,simonArr) {
-
-	// 		for(var i=0; i<simonArr.length; i++)
-	// 			if(playerArr[i]===simonArr[i]) {
-	// 				console.log(true);
-
-	// 	} else {
-	// 		console.log(false);
-	// 		reset();
-	// 		$("#start").hide();
-	// 		$("#playAgain").show();
-
-	// }
-
-	// };
-
-// 	function playerReset(array1,array2) {
-// 		var len1=array1.length;
-// 		var arr2 = array2.slice(0, len1);
-// 		if (arraysEqual(len1,arr2)) {
-// 			console.log(len1===arr2);
-// 			array1=[];
-// 			$("#playerDiv").html("");
-
-// 		} 
-// }	
-	
+	}	
 	function checker(array1,array2) {
 		var len1=array1.length;
 		var arr2 = array2.slice(0, len1);
@@ -67,12 +50,9 @@ $(document).ready(function(){
 		if(array1.length===array2.length) {
 			playerArr=[];
 			simonArr.push(randomRange(1,4));
-		} else {
-			console.log(false);
-		}
-	}
 
-
+		} 
+	};
 
 	
 	$("#start").on('click',function(){
@@ -124,7 +104,6 @@ $(document).ready(function(){
 		$("#playerDiv").html(playerArr);
 		$("#simonDiv").html(simonArr);
 
-
 	});
 	$("#green").on('click',function(){
 		playerArr.push(4);
@@ -133,7 +112,6 @@ $(document).ready(function(){
 		console.log(simonArr);
 		$("#playerDiv").html(playerArr);
 		$("#simonDiv").html(simonArr);
-
 
 	});
 
