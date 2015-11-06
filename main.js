@@ -36,30 +36,39 @@ $(document).ready(function(){
 
 	// };
 
-	function playerReset(array1,array2) {
-		var len1=array1.length;
-		var arr2 = array2.slice(0, len1);
-		if (len1===arr2) {
-			console.log(array1===array2.length)
-			array1=[];
-			$("#playerDiv").html("");
+// 	function playerReset(array1,array2) {
+// 		var len1=array1.length;
+// 		var arr2 = array2.slice(0, len1);
+// 		if (arraysEqual(len1,arr2)) {
+// 			console.log(len1===arr2);
+// 			array1=[];
+// 			$("#playerDiv").html("");
 
-		} 
-}	
+// 		} 
+// }	
 	
 	function checker(array1,array2) {
 		var len1=array1.length;
 		var arr2 = array2.slice(0, len1);
+
 		if (arraysEqual(array1, arr2)){
 			console.log(true);
-			simonArr.push(randomRange(1,4));
-			$("#playerDiv").html(playerArr);
+			
+
+			$("#playerDiv").html("");
+			$("#playerDiv").html(array1);
 			console.log(array1);
 		} else {
 			console.log(false);
 			reset();
 			$("#start").hide();
 			$("#playAgain").show();
+		}
+		if(array1.length===array2.length) {
+			playerArr=[];
+			simonArr.push(randomRange(1,4));
+		} else {
+			console.log(false);
 		}
 	}
 
@@ -91,8 +100,6 @@ $(document).ready(function(){
 	$("#red").on('click',function(){
 		playerArr.push(1);
 		checker(playerArr,simonArr);
-	
-		playerReset(playerArr,simonArr);
 		console.log(playerArr);
 		console.log(simonArr);
 		$("#playerDiv").html(playerArr);
@@ -102,8 +109,6 @@ $(document).ready(function(){
 	$("#blue").on('click',function(){
 		playerArr.push(2);
 		checker(playerArr,simonArr);
-
-		playerReset(playerArr,simonArr);
 		console.log(playerArr);
 		console.log(simonArr);
 		$("#playerDiv").html(playerArr);
@@ -114,8 +119,6 @@ $(document).ready(function(){
 	$("#yellow").on('click',function(){
 		playerArr.push(3);
 		checker(playerArr,simonArr);
-
-		playerReset(playerArr,simonArr);
 		console.log(playerArr);
 		console.log(simonArr);
 		$("#playerDiv").html(playerArr);
@@ -126,8 +129,6 @@ $(document).ready(function(){
 	$("#green").on('click',function(){
 		playerArr.push(4);
 		checker(playerArr,simonArr);
-
-		playerReset(playerArr,simonArr);
 		console.log(playerArr);
 		console.log(simonArr);
 		$("#playerDiv").html(playerArr);
