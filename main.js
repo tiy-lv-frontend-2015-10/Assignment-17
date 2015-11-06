@@ -107,12 +107,12 @@ $(document).ready(function(){
 	function animate(index) {
 		setTimeout(function() {
 			if(index!==simonArr.length) {
-				$(".button"+simonArr[index]).addClass("test");
+				$(".button"+simonArr[index]).addClass("glow");
 
-				if($(".button").hasClass("test")===true) {
+				if($(".button").hasClass("glow")===true) {
 					setTimeout(function(){
-				$(".button").removeClass("test");
-					},1000);
+				$(".button").removeClass("glow");
+					},400);
 			};
 				console.log(simonArr[index]);
 				index+=1

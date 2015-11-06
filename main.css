@@ -5,37 +5,37 @@
 	border:none;
 }
 
-#red {
+.button1 {
 	background: red;
 
 }
 
-#red:not(:active){
+.button1:not(:active){
 	transition:background-color 500ms;
 }
 
-#red:active {
+.button1:active {
 	background: #e15f5f;
 }
 
 
-#blue {
+.button2 {
 	background: blue;
 }
 
-#blue:not(:active){
+.button2:not(:active){
 	transition:background-color 500ms;
 }
 
-#blue:active {
+.button2:active {
 	background: #486fdb;
 }
 
-#yellow {
+.button3 {
 	background: yellow;
 }
 
-#green {
+.button4 {
 	background: green;
 
 }
@@ -53,6 +53,7 @@ span {
 	display: block;
 }
 
-.animate {
-	background: #fff;
+.glow {
+	box-shadow:inset 0 0 10px #000000;
+	opacity: .7;
 }
