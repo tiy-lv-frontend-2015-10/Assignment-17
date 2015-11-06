@@ -1,4 +1,4 @@
-var solutions = [
+var solution = [
 {id: 1, name: "Call 911"},
 {id: 2, name: "Boat"},
 {id: 3, name: "Heavy Coat"},
@@ -73,7 +73,11 @@ var solutions = [
 {id: 70, name: "Run like hell"},
 {id: 71, name: "Bucket brigade"},
 {id: 72, name: "Iced Tea"},
-{id: 73, name: "Use your Smart Bomb"}
+{id: 73, name: "Use your Smart Bomb"},
+{id: 74, name: "Emergency flares/food/water"},
+{id: 75, name: "Satellite phone"},
+{id: 76, name: "Call a plumber"},
+{id: 77, name: "Motel 6"}
 
 ];
 

@@ -1,0 +1,25 @@
+body {
+	background: #363636;
+	font-family: Arial, sans-serif;
+	font-weight: lighter;
+}
+
+body p {
+	font-size: 0.8rem;
+	color: #66FFFF;
+}
+
+#player-name {
+	height: 20px;
+	font-size: 0.9rem;
+}
+#p-label {
+	color: #0081FE
+}
+
+.container {
+	width: 900px;
+	margin: 0 auto;
+	color: #F8F8FF;
+	text-align: center;
+}
