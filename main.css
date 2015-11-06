@@ -1,6 +1,10 @@
+body {
+    background-color: rgba(255, 249, 238, 0.63) ;
+}
+
 #header {
     width: 100%;
-    background-color: blue;
+    background-color: brown;
 }
 
 h1 {

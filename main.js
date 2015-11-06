@@ -25,19 +25,36 @@ Player.prototype.attack = function(player) {
     
 p1.attack(p2);
     Player.prototype.attack = function(player) {
-        player.health -= randomNum;
+        return p2.health;
     };
 p2.attack(p1);
     Player.prototype.attack = function(player) {
-        player.health -= randomNum;
+        return p1.health;
     };
      
+    
+//experimental youtube api    
+var tag = document.createElement('script');
+tag.src = "https://www.youtube.com/iframe_api";
+      var firstScriptTag = document.getElementsByTagName('script')[0];
+      firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
 function PlayVideo() {
-    this.load();//add youtube video link
+    //this.load();??//add youtube video link
     this.play = function() {
-        
-    }
-};    
+        var = player;
+        function onYouTubeIframeAPIReady() {
+        player = new YT.Player('player', {
+            height: '390',
+            width: '640',
+            videoId: 'W4WGQmWcrbs',
+            events: {
+                'onReady': onPlayerReady,
+                'onStateChange': onPlayerStateChange
+            }
+    });
+}
+}
+}
     
 var punchesChicken = new PlayVideo();
 var throwsChicken = new PlayVideo();
@@ -65,8 +82,8 @@ chickenDies.play = ;//start time 4:36
 
 
     
-//add video on click
-$("#video").on("click", function() 
+//add video 'on click' attack buttons
+//$("#video").on("click", function() 
 
     
 });//closes ready
