@@ -47,6 +47,13 @@ $(document).ready(function(){
 	$("#start").on('click',function(){
 		
 		simonArr.push(randomRange(1,4));
+		$(".button"+simonArr[0]).addClass("glow");
+
+		if($(".button").hasClass("glow")===true) {
+					setTimeout(function(){
+				$(".button").removeClass("glow");
+					},400);
+				};
 		if(simonArr.length>1) {
 			simonArr=[randomRange(1,4)];
 		}
