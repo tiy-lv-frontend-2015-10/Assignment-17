@@ -80,3 +80,24 @@ img {
   position: relative;
   bottom: 16em;
 }
+
+.lost {
+  position: absolute;
+  top: 0;
+  display: none;
+  font-size: 200px;
+  color: red;
+}
+
+#reset {
+  display: none;
+  position: relative;
+  top: 15em;
+  right: 33.5em;
+}
+
+#reset button {
+  border-style: none;
+  font-size: 15px;
+  background-color: #FFE545;
+}

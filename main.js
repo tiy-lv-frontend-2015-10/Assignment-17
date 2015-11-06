@@ -1,5 +1,9 @@
 $(document).ready(function() {
 
+$('#reset').on('click', function(){
+        location.reload();
+});
+
 function minMax(min, max) {
   return Math.floor(Math.random() * max) + min;
 }
@@ -10,7 +14,10 @@ function Player(container) {
   this.container = $(container);
   this.flow = function(opponent) {
     var flowChance = Math.random();
-    if (flowChance > .4) {
+    if (opponent.streetCred <= 0) {
+      $('.lost').show();
+      $('#reset').show();
+    } else if (flowChance > .4) {
       opponent.streetCred -= minMax(1,11);
       opponent.container.find('.credPoints').html(opponent.streetCred);
       $('#description').html("YO!! You hit him with that flow! Next players turn!");
@@ -28,6 +35,8 @@ function Player(container) {
     }
   }
 }
+
+
 
 var player1 = new Player('.player1');
 var player2 = new Player('.player2');
