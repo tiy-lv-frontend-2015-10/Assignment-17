@@ -64,6 +64,9 @@ h2 {
 #attackChickenBtn {
     margin-left: ;
 }
+.inline {
+    display: inline;
+}
 
 #playBtn {
     width: 300px;
