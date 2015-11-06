@@ -1,17 +1,18 @@
 $(document).ready(function() {
 
 function minMax(min, max) {
-  return Math.floor(Math.random()*max);
+  return Math.floor(Math.random() * max) + min;
 }
 
-function Player() {
+function Player(container) {
   this.name;
   this.streetCred = 100;
+  this.container = $(container);
   this.flow = function(opponent) {
     var flowChance = Math.random();
     if (flowChance > .4) {
-      $('.credPoints').html(opponent.streetCred -= minMax(1, 11));
-      $('.credPoints2').html(opponent.streetCred -= minMax(1, 11));
+      opponent.streeCred -= minMax(1,11);
+      opponent.container.find('.credPoints').html(opponent.streetCred -= minMax(1, 11));
     } else {
       $('#description').html("YO!! the flow is weak in " + this.name + "." + " Next players turn!");
     }
@@ -20,15 +21,14 @@ function Player() {
     var credChance = Math.random();
     if (credChance > .5) {
       $('.credPoints').html(player.streetCred += minMax(1, 20));
-      $('.credPoints2').html(player.streetCred += minMax(1, 20));
     } else {
       $('#description').html(this.name + " street cred is messed up and could gain anymore!")
     }
   }
 }
 
-var player1 = new Player();
-var player2 = new Player();
+var player1 = new Player('.player1');
+var player2 = new Player('.player2');
 
 
 player1.name = "Gangsta Chewie";
