@@ -33,19 +33,26 @@ body {
 	border: 2px solid black;
 	border-radius: 6px;
 	top: 200px;
+	left: 10px;
 }
 
 .buttons{
 	list-style: none;
 	margin: 0px;
 	padding: 0px;
+	height: 20px;
+	font-family: 'Shadows Into Light', curisve;
+
 }
 
 .buttons li{
 	float: left;
 	position: relative;
-	margin: 5px;
+	border: 1px solid black;
+	box-shadow: 0px 5px 6px white;
+	margin: 10px;
 	padding: 0px;
+	left: 30px;
 	top: 200px;
 }
 
@@ -55,7 +62,7 @@ body {
 	background: rgba(110, 22, 21, .6);
 	border: 1px solid white;
 	border-radius: 20px;
-	width: 48%;
+	width: 49%;
 	height: 320px;
 	top: 50px;
 
@@ -70,9 +77,9 @@ body {
 	width: 300px;
 	height: 320px;
 	position: relative;
-	border: 2px solid red;
+	border: 2px solid black;
 	border-radius: 6px;
-	left: 20px;
+	left: 10px;
 	top: 200px;
 
 }
