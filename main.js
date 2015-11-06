@@ -4,7 +4,7 @@ function Player(name, gender){
 
 	this.name = name;
 	this.gender = gender;
-	this.score;
+	this.score = 0;
 }
 
 //Game object
@@ -20,7 +20,9 @@ player1 = new Player();
 $('#name-submit').on('click', function(e){
 	e.preventDefault();
 	player1.name = $('#player-name').val();
+	$('#intro').hide();
 	console.log(player1.name);
+
 });
 
 
@@ -34,8 +36,23 @@ var currentGame = new Game();
 //set New Problem for deployment.
 
 	function getNewProblemID(min, max) {
-  return Math.floor(Math.random() * (max - min + 1)) + min;
-}
+  var num = Math.floor(Math.random() * (max - min + 1)) + min;
+	console.log(num);
+	}
+
+	getNewProblemID(1,50);
+
+//template for game-start-text <div>
+
+// var startTheGame = {
+//
+// 					name: player1.name
+// 				};
+//
+// var startGameTemplate = $("#game-start").text();
+// var gameStartHTML = Mustache.render(startGameTemplate, startTheGame);
+// $("#game-start-text").html(appetizerHTML);
+//**************************
 
 //
 // 		1. Each turn -- newProblem.id = Math.ceil(Math.random [range function].

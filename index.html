@@ -25,7 +25,9 @@
 
 		<p>Your task is to look at the six choices, and get a general idea what your problem might be--then click one of the choice buttons that seems like it might solve the problem.  If you guess correctly, you win 10 points.  If you choose one of the "alternate" solutions, you win either 5 or 3 points, respectively.  You'll have 10 chances to accumulate as many points as possible. A perfect score is 100--but that's unlikely to occur outside laboratory conditions--after all, you have no clue what your problem is. Trust me, you'll be lucky to score over 25.  But hopefully you'll have fun trying.  Good luck!  </p>
 	</div>
+	<div id="game-start-text">
 
+	</div>
 
 
 
@@ -53,5 +55,9 @@
 	<script src="problems.js"></script>
 	<script src="solutions.js"></script>
 	<script src="main.js"></script>
+	<script type="x-tmpl-mustache" id="game-start">
+				<p>Okay, {{name}}, {{text1}} </p>
+				<button></button>
+</script>
 </body>
 </html>
