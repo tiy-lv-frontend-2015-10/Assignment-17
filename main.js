@@ -32,12 +32,14 @@ $(document).ready(function(){
 		}
 		if(array1.length===array2.length) {
 			playerArr=[];
-			console.log(playerArr);
-			console.log(simonArr);
 			simonArr.push(randomRange(1,4));
 			animate(0);
 
 		} 
+
+		if("#playAgain") {
+			simonArr=[];
+		};
 		
 
 	};
