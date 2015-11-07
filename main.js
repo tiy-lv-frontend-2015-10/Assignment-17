@@ -20,6 +20,8 @@ $(document).ready(function(){
 		audio5.currentTime=0;
 		audio5.play();
 		$(".button").addClass("test");
+		$("body").css("background","#000");
+		$("#darth").show();
 		
 	}	
 	function checker(array1,array2) {
@@ -68,6 +70,7 @@ $(document).ready(function(){
 
 	$("#playAgain").on('click',function(){
 		$(".button").removeClass("test");
+		$("body").css("background","#494848");
 		audio5.pause();
 		$("#playAgain").hide();
 		simonArr.push(randomRange(1,4));
