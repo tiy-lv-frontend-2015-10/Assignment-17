@@ -10,9 +10,17 @@
 
 <body>
    <div id="header"><h1>Peter<span class="white">vs</span>Chicken</h1></div>
-   <disv id="peter_chickenDiv">
+   <div id="peter_chickenDiv">
        <img id="peter" class="images" src="images/peter.jpg" width="375" height="500"/>
-       <div id="videoPlayer"></div>
+       <div id="scroller" style="width: 550px; height: 400px; margin: 0 auto;">
+           <ul>
+               <li><img src="images/peterPunchesChicken.png" width="400px" height="203px"/></li>
+               <li><img src="images/chickenWrenchesPeter.png" width="400px" height="203px"/></li>
+               <li><img src="images/peterChokesChicken.png" width="400px" height="203px"/></li>
+               <li><img src="images/peterStranglesChicken.png" width="400px" height="203"/></li>
+               <li><img src="images/peterThrowsChicken.png" width="400px" height="203"/></li>
+           </ul>
+       </div>
        <img id="chicken" class="images" src="images/chicken.jpg" width="375" height="500"/>
    </div>
   
@@ -20,7 +28,7 @@
    <h2 class="center">Kick Peter's Face</h2>
   
        <div id="buttonsDiv">
-       <button id="peterPointsBtn" class="pointButtons"><span class="buttonText">0000</span></button>
+       <button id="peterPointsBtn" class="pointButtons"><span class="buttonText">50</span></button>
        <button id="punchesChickenBtn" class="videoLink">Punches Chicken</button>
        <button id="throwsChicken">Throw Chicken</button>
        <button id="clubsChicken">Club Chicken</button>
@@ -30,7 +38,7 @@
        <button id="crushesPetersHead">Crush Peter's Head</button>
        <button id="kicksPetersFace">Kick Peter's Face</button>
        <button id="attackPeterBtn">Punches Peter</button>
-       <button id="chickenPointsBtn" class="pointButtons"><span class="buttonText">0000</span></button>
+       <button id="chickenPointsBtn" class="pointButtons"><span class="buttonText">50</span></button>
        <p class="clearFloat"></p>
        <p class="center"><button id="playBtn"><span class="buttonText">PLAY</span></button></p>
    </div>

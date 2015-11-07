@@ -1,40 +1,47 @@
 $(document).ready(function () {
+   
+$("#playBtn").on('click' function() {
+    location.reload();
+});
 
 function Player() {
     this.name;
-    this.health= 50; 
+    this.health = 50; 
     this.attack = function(opponent) {
+        var randomNum = Math.floor((Math.random() * 10) + 1);
         opponent.healh -= randomNum;
     }
-var randomNum = Math.floor((Math.random() * 10) + 1);
 };
+       
+
     
+    
+//Player.prototype.image = function(images) {///////////////////
+    
+//}///////////// 
+    
+var points = new Player();
 var p1 = new Player();
 var p2 = new Player();
+var img1 = new Player();
     
 p1.name = "Peter";
 p2.name = "Chicken";
-p1.health = "";
-p2.health = ;
-p1.attack = "";
-p2.attack = ;
-    
-Player.prototype.attack = function(player) {
-    
-}
-    
-p1.attack(p2);
-    Player.prototype.attack = function(player) {
-        return p2.health;
-    };
-p2.attack(p1);
-    Player.prototype.attack = function(player) {
-        return p1.health;
-    };
-     
-    
 
-function PlayVideo() {
+$("#punchesChickenBtn").on('click', function() {
+    p1.attack(p2); 
+});
+$("#throwChickenBtn").on('click', function() { p1.attack(p2); });
+$("clubChickenBtn").on('click', function() { p1.attack(p2); });
+$("strangleChicken").on('click', function() { p1.attack(p2); });
+
+$("electrocutePeter").on('click', function() { p2.attack(p1); });
+$("crushPetersHead").on('click', function() { p2.attack(p1); });
+$("kickPetersFace").on('click', function() { p2.attack(p1); });
+$("punchesPeter").on('click', function() { p2.attack(p1); });
+    
+//video code/////////////////////////////////////////////////////////////
+/*function PlayVideo() {
     this.play = function() {
            var videoFile = $(this).Attr('videofile');
            var videoPoster = $(this).Attr('videofile');
@@ -72,7 +79,54 @@ chickenDies.play = ;//start time 4:36
 
     
 //add video 'on click' attack buttons
-//$("#video").on("click", function() 
+//$("#video").on("click", function() */////////////////////
+    
+    
+    
+/*------------------------------scroller----------------------------*/
+    
+$(function(){
+        var scroller = $('#scroller div.innerScrollArea');
+        var scrollerContent = scroller.children('ul');
+        scrollerContent.children().clone().appendTo(scrollerContent);
+        var curX = 0;
+        scrollerContent.children().each(function(){
+            var $this = $(this);
+            $this.css('left', curX);
+            curX += $this.outerWidth(true);
+        });
+        var fullW = curX / 2;
+        var viewportW = scroller.width();
 
+        // Scrolling speed management
+        var controller = {curSpeed:0, fullSpeed:2};
+        var $controller = $(controller);
+        var tweenToNewSpeed = function(newSpeed, duration)
+        {
+            if (duration === undefined)
+                duration = 600;
+            $controller.stop(true).animate({curSpeed:newSpeed}, duration);
+        };
+
+        // Pause on hover
+        scroller.hover(function(){
+            tweenToNewSpeed(0);
+        }, function(){
+            tweenToNewSpeed(controller.fullSpeed);
+        });
+
+        // Scrolling management; start the automatical scrolling
+        var doScroll = function()
+        {
+            var curX = scroller.scrollLeft();
+            var newX = curX + controller.curSpeed;
+            if (newX > fullW*2 - viewportW)
+                newX -= fullW;
+            scroller.scrollLeft(newX);
+        };
+        setInterval(doScroll, 20);
+        tweenToNewSpeed(controller.fullSpeed);
+    });
+    
     
 });//closes ready
