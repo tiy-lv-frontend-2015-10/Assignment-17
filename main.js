@@ -37,7 +37,7 @@ $(document).ready(function(){
 
 		} 
 
-		if("#playAgain") {
+		if($("#playAgain").is(":visible")){
 			simonArr=[];
 		};
 		
