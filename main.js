@@ -3,11 +3,12 @@ $(document).ready(function(){
 
 	var playerArr=[];
 	var simonArr=[];
-	var audio1= new Audio("tone1.mp3");
+	var audio1= new Audio("tone1.wav");
 	var audio2= new Audio("tone2.wav");
 	var audio3= new Audio("tone3.wav");
 	var audio4= new Audio("tone4.wav");
 	var audio5= new Audio("imperial-march.wav");
+	
 
 	function randomRange(min,max) {
 		return Math.floor(Math.random()*4 +1);
@@ -21,7 +22,7 @@ $(document).ready(function(){
 		audio5.play();
 		$(".button").addClass("test");
 		$("body").css("background","#000");
-		$("#darth").show();
+		$("#darth").fadeIn(1000);
 		
 	}	
 	function checker(array1,array2) {
@@ -52,8 +53,10 @@ $(document).ready(function(){
 
 	$("#start").on('click',function(){
 		$("#start").hide();
-
+		$("#scoreDiv").show();
 		simonArr.push(randomRange(1,4));
+		var startSound=new Audio("tone"+simonArr[0]+".wav");
+		startSound.play();
 		$(".button"+simonArr[0]).addClass("glow");
 		if($(".button").hasClass("glow")===true) {
 					setTimeout(function(){
@@ -71,6 +74,7 @@ $(document).ready(function(){
 	$("#playAgain").on('click',function(){
 		$(".button").removeClass("test");
 		$("body").css("background","#494848");
+		$("#darth").hide();
 		audio5.pause();
 		$("#playAgain").hide();
 		simonArr.push(randomRange(1,4));
@@ -113,9 +117,12 @@ $(document).ready(function(){
 	});
 
 	function animate(index) {
+		
 		setTimeout(function() {
 			if(index!==simonArr.length) {
 				$(".button"+simonArr[index]).addClass("glow");
+				var global=new Audio("tone"+simonArr[index]+".wav");
+				global.play();
 				if($(".button").hasClass("glow")===true) {
 					setTimeout(function(){
 				$(".button").removeClass("glow");
