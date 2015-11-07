@@ -1,8 +1,27 @@
 $(document).ready(function() {
 
+var audio = new Audio('chewie.mp3');
+
+var audio2 = new Audio('blaster.wav');
+
+var audio3 = new Audio('health.mp3');
+
 $('#reset').on('click', function(){
-        location.reload();
+  location.reload();
 });
+
+$('.flow.player1').on('click', function(){
+  (audio).play();
+});
+
+$('.flow.player2').on('click', function(){
+  (audio2).play();
+});
+
+$('.cred').on('click', function(){
+  (audio3).play();
+});
+
 
 function minMax(min, max) {
   return Math.floor(Math.random() * max) + min;

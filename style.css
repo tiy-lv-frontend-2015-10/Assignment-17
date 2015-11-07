@@ -42,30 +42,34 @@ img {
 }
 
 .flow {
-  margin-left: 50px;
+  margin-left: 35px;
   background-color: #607b5e;
   color: #eae3c6;
   border-radius: 2em;
   border-style: none;
   outline: none;
+  font-size: 15px;
+
 }
 
 .flow:active {
   background-color: #1d73d6;
-  box-shadow:
+  box-shadow: 0 3px #27496d;
 }
 
 .cred {
   background-color: #a7382e;
   color: #eae3c6;
-  margin-left: 30px;
+  margin-left: 25px;
   border-radius: 2em;
   border-style: none;
   outline: none;
+  font-size: 15px;
 }
 
 .cred:active {
   background-color: #1d73d6;
+  box-shadow: 0 3px #27496d;
 }
 
 .sc {
