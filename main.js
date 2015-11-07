@@ -10,7 +10,6 @@ function Player(name, gender){
 //Game object
 
 function Game() {
-
 	this.turnCount = 0;
 
 }
@@ -22,25 +21,73 @@ $('#name-submit').on('click', function(e){
 	player1.name = $('#player-name').val();
 	$('#intro').hide();
 	console.log(player1.name);
-
 });
-
-
-
 
 
 var player1 = new Player();
 
 var currentGame = new Game();
 
+// Game.prototype.
+// var burnedProblems = [];
+var remainingProblems = problems;
+
+
+
 //set New Problem for deployment.
 
-	function getNewProblemID(min, max) {
-  var num = Math.floor(Math.random() * (max - min + 1)) + min;
-	console.log(num);
+function getNewProblem() {
+		var remainingSolutions = solutions;
+			var min = 0, max = remainingProblems.length -1;
+		  var num = Math.floor(Math.random() * (max - min)) + min;
+			console.log(remainingProblems[num], num);
+
+			var answer = solutions.filter(function(item) {
+				if (item.id === remainingProblems[num].id) {
+					return true;
+				} else {
+					return false;
+				}
+			});
+			console.log(answer);
+			console.log(solutions.indexOf(answer[0]));
+
+			var alt1 = solutions.filter(function(item){
+				if (item.id === remainingProblems[num].alt[0]) {
+					return true;
+				}else {
+					return false;
+				}
+			});
+			console.log(alt1);
+			console.log(solutions.indexOf(alt1[0]));
+			var alt2 = solutions.filter(function(item){
+				if (item.id === remainingProblems[num].alt[1]) {
+					return true;
+				}else {
+					return false;
+				}
+			});
+			console.log(alt2);
+			var problem = remainingProblems[num];
+			remainingProblems.splice(num, 1);
+			// console.log(remainingProblems.length);
+			return problem;
+
 	}
 
-	getNewProblemID(1,50);
+
+
+
+
+
+console.log(getNewProblem());
+
+
+
+//check to see if problem has already been chosen, reject if so
+
+
 
 //template for game-start-text <div>
 

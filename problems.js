@@ -1,4 +1,5 @@
 var problems = [
+{id: 0, alt: [], name: ""},
 {id: 1, alt: [59, 70], name:  "Your house is on fire"},
 {id: 2, alt: [70, 71], name:  "Flash flood"},
 {id: 3, alt: [56, 51], name:  "It's 20 degrees below zero"},
@@ -23,8 +24,8 @@ var problems = [
 {id: 22, alt: [75, 74], name:  "Heading into Death Valley with 1/8 tank"},
 {id: 23, alt: [67, 63], name:  "Breaking bathroom scale, pants don't fit"},
 {id: 24, alt: [8, 17], name:  "6 friends coming over, nothing in fridge but beer"},
-{id: 25, alt: [76, ], name:  "Toilet backed up"},
-{id: 26, alt: [], name:  "Roaches--lots of them"},
+{id: 25, alt: [76, 77], name:  "Toilet backed up"},
+{id: 26, alt: [78, 79], name:  "Roaches--lots of them"},
 {id: 27, alt: [], name:  "Choppers--lots of them"},
 {id: 28, alt: [48, 70], name:  "4 really big guys with swords coming at you"},
 {id: 29, alt: [53, 57], name:  "Late night booty call"},

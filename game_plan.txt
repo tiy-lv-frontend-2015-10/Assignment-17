@@ -34,7 +34,7 @@ this.burnedProblems = [];
 
 A.
 [
-		1. Each turn -- newProblem.id = Math.ceil(Math.random [range function].
+		1. turn -- run random problem selector. 
 		2. loop over burnedProblems and repeat problemChoice until one with no match in burnedProblems is found
 		3. burnedProblems.push(thisProblem.id);
 		turns += 1;

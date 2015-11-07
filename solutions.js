@@ -1,4 +1,5 @@
-var solution = [
+var solutions = [
+{id: 0, name: ""},
 {id: 1, name: "Call 911"},
 {id: 2, name: "Boat"},
 {id: 3, name: "Heavy Coat"},
@@ -33,7 +34,7 @@ var solution = [
 {id: 32, name: "Restart the modem/router"},
 {id: 33, name: "{{#porn}}<li><img src='{{portfolio.pic}}'/></li>{{/porn}}"},
 {id: 34, name: "Turn amp up to 11"},
-{id: 35, name: "Baseball bats"},
+{id: 35, name: "Use fatter drumsticks"},
 {id: 36, name: "Super Soaker"},
 {id: 37, name: "Rubber Gloves"},
 {id: 38, name: "Penicillin"},
@@ -77,8 +78,9 @@ var solution = [
 {id: 74, name: "Emergency flares/food/water"},
 {id: 75, name: "Satellite phone"},
 {id: 76, name: "Call a plumber"},
-{id: 77, name: "Motel 6"}
-
+{id: 77, name: "Motel 6"},
+{id: 78, name: "Clog dancing"},
+{id: 79, name: "Baseball bat"}
 ];
 
 // var sortedSolutions = solutions.sort(function(a,b){
