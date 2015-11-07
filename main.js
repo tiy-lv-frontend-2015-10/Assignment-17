@@ -3,7 +3,7 @@ $(document).ready(function(){
 
 	var playerArr=[];
 	var simonArr=[];
-	var audio= new Audio("tone1.mp3");
+	var audio1= new Audio("tone1.mp3");
 	var audio2= new Audio("tone2.wav");
 	var audio3= new Audio("tone3.wav");
 	var audio4= new Audio("tone4.wav");
@@ -19,6 +19,7 @@ $(document).ready(function(){
 		$("#score").html("");
 		audio5.currentTime=0;
 		audio5.play();
+		$(".button").addClass("test");
 		
 	}	
 	function checker(array1,array2) {
@@ -56,18 +57,17 @@ $(document).ready(function(){
 					setTimeout(function(){
 				$(".button").removeClass("glow");
 					},400);
-					console.log(playerArr);
-					console.log(simonArr);
 				};
 		if(simonArr.length>1) {
 			simonArr=[randomRange(1,4)];
+			
 		}
 	
 
 	});
 
 	$("#playAgain").on('click',function(){
-
+		$(".button").removeClass("test");
 		audio5.pause();
 		$("#playAgain").hide();
 		simonArr.push(randomRange(1,4));
@@ -85,8 +85,8 @@ $(document).ready(function(){
 	$("#red").on('click',function(){
 		playerArr.push(1);
 		checker(playerArr,simonArr);
-		audio.play();
-		audio.currentTime=0;
+		audio1.play();
+		audio1.currentTime=0;
 
 	});
 	$("#blue").on('click',function(){
@@ -113,7 +113,6 @@ $(document).ready(function(){
 		setTimeout(function() {
 			if(index!==simonArr.length) {
 				$(".button"+simonArr[index]).addClass("glow");
-
 				if($(".button").hasClass("glow")===true) {
 					setTimeout(function(){
 				$(".button").removeClass("glow");
