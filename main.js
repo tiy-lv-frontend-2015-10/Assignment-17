@@ -7,6 +7,7 @@ $(document).ready(function(){
 	var audio2= new Audio("tone2.wav");
 	var audio3= new Audio("tone3.wav");
 	var audio4= new Audio("tone4.wav");
+	var audio5= new Audio("imperial-march.wav");
 
 	function randomRange(min,max) {
 		return Math.floor(Math.random()*4 +1);
@@ -16,6 +17,8 @@ $(document).ready(function(){
 		playerArr=[];
 		simonArr=[];
 		$("#score").html("");
+		audio5.currentTime=0;
+		audio5.play();
 		
 	}	
 	function checker(array1,array2) {
@@ -46,6 +49,7 @@ $(document).ready(function(){
 
 	$("#start").on('click',function(){
 		$("#start").hide();
+
 		simonArr.push(randomRange(1,4));
 		$(".button"+simonArr[0]).addClass("glow");
 		if($(".button").hasClass("glow")===true) {
@@ -64,7 +68,7 @@ $(document).ready(function(){
 
 	$("#playAgain").on('click',function(){
 
-		
+		audio5.pause();
 		$("#playAgain").hide();
 		simonArr.push(randomRange(1,4));
 		$(".button"+simonArr[0]).addClass("glow");
@@ -82,23 +86,27 @@ $(document).ready(function(){
 		playerArr.push(1);
 		checker(playerArr,simonArr);
 		audio.play();
+		audio.currentTime=0;
 
 	});
 	$("#blue").on('click',function(){
 		playerArr.push(2);
 		checker(playerArr,simonArr);
 		audio2.play();
+		audio2.currentTime=0;
 	});
 	$("#yellow").on('click',function(){
 		playerArr.push(3);
 		checker(playerArr,simonArr);
 		audio3.play();
+		audio3.currentTime=0;
 
 	});
 	$("#green").on('click',function(){
 		playerArr.push(4);
 		checker(playerArr,simonArr);
 		audio4.play();
+		audio4.currentTime=0;
 	});
 
 	function animate(index) {
