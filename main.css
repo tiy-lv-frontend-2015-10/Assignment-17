@@ -92,6 +92,7 @@ body {
 	font-family: 'Shadows Into Light', cursive;
 	font-size: 30px;
 	text-align: center;
+	cursor: pointer;
 }
 
 #start:hover {
