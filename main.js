@@ -10,7 +10,13 @@ function Player(name, gender){
 //Game object
 
 function Game() {
-	this.turnCount = 0;
+	this.turnCount = 10;
+
+}
+
+function Question() {
+	this.currentProblem = {};
+	this.remainingAnswers = solutions;
 
 }
 // Create Player -- get name,(opt gender)
@@ -23,65 +29,91 @@ $('#name-submit').on('click', function(e){
 	console.log(player1.name);
 });
 
-
 var player1 = new Player();
 
 var currentGame = new Game();
 
 // Game.prototype.
-// var burnedProblems = [];
-var remainingProblems = problems;
+
+// Game.prototype.
+// var problemSet = [];
 
 
 
 //set New Problem for deployment.
 
-function getNewProblem() {
-		var remainingSolutions = solutions;
+function getNewProblems() {
+	var remainingProblems = problems;
+	var problemSet = [];
+		for (var i = 1; i < 11; i++) {
+			var currentProblem = {};
 			var min = 0, max = remainingProblems.length -1;
-		  var num = Math.floor(Math.random() * (max - min)) + min;
-			console.log(remainingProblems[num], num);
-
-			var answer = solutions.filter(function(item) {
-				if (item.id === remainingProblems[num].id) {
-					return true;
-				} else {
-					return false;
-				}
-			});
-			console.log(answer);
-			console.log(solutions.indexOf(answer[0]));
-
-			var alt1 = solutions.filter(function(item){
-				if (item.id === remainingProblems[num].alt[0]) {
-					return true;
-				}else {
-					return false;
-				}
-			});
-			console.log(alt1);
-			console.log(solutions.indexOf(alt1[0]));
-			var alt2 = solutions.filter(function(item){
-				if (item.id === remainingProblems[num].alt[1]) {
-					return true;
-				}else {
-					return false;
-				}
-			});
-			console.log(alt2);
-			var problem = remainingProblems[num];
-			remainingProblems.splice(num, 1);
-			// console.log(remainingProblems.length);
-			return problem;
-
+		  var probNum = Math.floor(Math.random() * (max - min)) + min;
+			currentProblem = remainingProblems[probNum];
+			console.log(currentProblem);
+			problemSet.push(currentProblem);
+			// console.log(problemSet);
+			remainingProblems.splice(currentProblem, 1);
+			console.log(remainingProblems.length);
+		}
+		return problemSet;
 	}
 
+	getNewProblems();
+	
 
 
+	//
+	// 		var top6 = [];
+	// 		var answer = solutions.filter(function(item) {
+	// 			if (item.id === remainingProblems[probNum].id) {
+	// 				return true;
+	// 			} else {
+	// 				return false;
+	// 			}
+	// 		});
+	// 		top6.push(answer);
+	// 		remainingSolutions.splice(answer, 1);
+	//
+	// 		var alt1 = solutions.filter(function(item){
+	// 			if (item.id === remainingProblems[probNum].alt[0]) {
+	// 				return true;
+	// 			}else {
+	// 				return false;
+	// 			}
+	// 		});
+	// 		top6.push(alt1);
+	// 		remainingSolutions.splice(alt1, 1);
+	//
+	// 		var alt2 = solutions.filter(function(item){
+	// 			if (item.id === remainingProblems[probNum].alt[1]) {
+	// 				return true;
+	// 			}else {
+	// 				return false;
+	// 			}
+	// 		});
+	// 		top6.push(alt2);
+	// 		remainingSolutions.splice(alt2, 1);
+	//
+	// 		// var pickMore = function() {
+	// 		// 	for (var i = 0; i < 3; i++) {
+	// 		// 	var min = 0, max = remainingSolutions.length -1;
+	// 		// 	var nextNum = Math.floor(Math.random() * (max - min)) + min;
+	// 		// 	top6.push(remainingSolutions[nextNum]);
+	// 		// 	console.log(remainingProblems[nextNum]);
+	// 		// 	remainingSolutions.splice(nextNum, 1);
+	// 		// }
+	// 	// }
+	//
+	// 		// var currentProblem = remainingProblems[probNum];
+	// 		// remainingProblems.splice(probNum, 1);
+	// 		// console.log(remainingProblems.count);
+	// 		// currentGame.turncount -= 1;
+	// 		// // return currentProblem;
+	//
+	// }
 
 
-
-console.log(getNewProblem());
 
 
 
