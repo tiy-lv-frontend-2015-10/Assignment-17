@@ -6,6 +6,7 @@ var audio2 = new Audio('blaster.wav');
 
 var audio3 = new Audio('health.mp3');
 
+
 $('#reset').on('click', function(){
   location.reload();
 });

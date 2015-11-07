@@ -114,6 +114,7 @@ img {
   border-style: none;
   font-size: 15px;
   background-color: #FFE545;
+  outline: none;
 }
 
 #reset button:active {
