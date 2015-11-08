@@ -8,14 +8,15 @@ function Character (name, health, weapon) {
   }
 
   this.attack = function attack(opponent) {
-    opponent.health -= 10;
-    console.log(this.name + " just attacked " + opponent.name + " for 10 points!");
+    var weaponDamage = this.weapon.damage();
+    opponent.health = opponent.health - weaponDamage;
+    console.log(this.name + " just attacked " + opponent.name + " for " + weaponDamage + " points!");
     console.log(opponent.name + "'s health is now " + opponent.health);
     console.log("");
   };
 
   /* we may use these in the future. Keep them for now
-  
+
   this.killHit = function (opponent) {
     opponent.heal -= this.randomCrit();
   };
@@ -34,6 +35,14 @@ function Weapon(name, minAttack, maxAttack){
   this.name = name;
   this.minAttack = minAttack;
   this.maxAttack = maxAttack;
+
+  function getRandomInt(min, max) {
+    return Math.floor(Math.random() * (max - min + 1)) + min;
+  }
+
+  this.damage = function(){
+    return getRandomInt(this.minAttack, this.maxAttack);
+  }
 }
 
 function declareWinner(player){
