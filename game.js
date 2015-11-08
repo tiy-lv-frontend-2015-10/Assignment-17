@@ -1,7 +1,10 @@
 $(document).ready(function(){
 
+var audio1 = new Audio("assets/trynot.mp3");	
+
 	$("#start").on("click", function(){
 		$("#start").toggle();
+		audio1.play();
 	});
 	$("img").on('click', function(){
 		$("img").toggleClass("displayNone");

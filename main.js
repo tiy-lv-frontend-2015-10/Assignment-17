@@ -1,5 +1,6 @@
 $(document).ready(function(){
 
+
 function Player() {
   	this.name;
   	this.health = 150;
