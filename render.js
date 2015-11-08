@@ -19,7 +19,7 @@ $(document).ready(function(){
 		text: "We're ready to start the game. Press Play to begin. Good Luck!"
  };
 
-	var startupTemplate = $('#').text();
+	var startupTemplate = $('#round-start').text();
 	var startupHTML = Mustache.render(startupTemplate, startupData);
 	$('#game-start').html(startupHTML);
 

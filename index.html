@@ -22,12 +22,15 @@
 
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
 	<script src="https://code.jquery.com/ui/1.11.4/jquery-ui.min.js"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/mustache.js/2.2.0/mustache.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/mustache.js/2.2.0/mustache.min.js">
+	</script>
 	<script src="problems.js"></script>
 	<script src="solutions.js"></script>
 	<script src="intro-txt.js"></script>
 	<script src="render.js"></script>
 	<script src="main.js"></script>
+	<script src="actions.js"></script>
+	<!-- MUSTACHE*********************************************************** -->
 	<script type="x-tmpl-mustache" id="game-intro">
 		<form id="name-input">
 				<label for="player-name" id="p-label">Enter your name: =></label>
@@ -40,10 +43,9 @@
 			<p id='par3'>{{par3}}</p>
 		{{/introData.splash}}
 	</script>
-	<script type="x-tmpl-mustache" id="game-intro">
+	<script type="x-tmpl-mustache" id="round-start">
 		<p>Okay, {{name}}, {{text}}</p>
 		<button id="startTheGame">Start the Game</button>
-
 	</script>
 </body>
 </html>
