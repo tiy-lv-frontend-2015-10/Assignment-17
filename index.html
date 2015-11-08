@@ -11,8 +11,9 @@
 		<h1 id="main-title">What's your Problem?</h1>
 
 		<div id="intro"></div>
-
 		<div id="game-start"></div>
+		<div id="turnBoard"></div>
+
 
 	</div>
 
@@ -46,6 +47,25 @@
 	<script type="x-tmpl-mustache" id="round-start">
 		<p>Okay, {{name}}, {{text}}</p>
 		<button id="startTheGame">Start the Game</button>
+	</script>
+	<script type="x-tmpl-mustache" id="turn-template">
+		<div id="mainstage"><img src="{{turnData[0].image}}" />
+			<p>{{turnData[0].name}}</p>
+		</div>
+		<div id="three-left">
+			<ul id="left">
+			<li class="choice-button" id="c0">{{turnData[1][0].name}}</li>
+			<li class="choice-button" id="c1">{{turnData[1][1].name}}</li>
+			<li class="choice-button" id="c2">{{turnData[1][2].name}}</li>
+			</ul>
+		</div>
+		<div id="three-right">
+			<ul id="right">
+			<li class="choice-button" id="c3">{{turnData[1][3].name}}</li>
+			<li class="choice-button" id="c4">{{turnData[1][4].name}}</li>
+			<li class="choice-button" id="c5">{{turnData[1][5].name}}</li>
+			</ul>
+		</div>
 	</script>
 </body>
 </html>

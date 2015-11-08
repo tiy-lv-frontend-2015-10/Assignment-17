@@ -25,3 +25,12 @@ $(document).ready(function(){
 
 
 });
+
+function displayTurn(turn) {
+	var turnData = {
+		turnData: currentGame.quizSet[turn]
+	};
+	var turnTemplate = $('#turn-template').text();
+	var turnHTML = Mustache.render(turnTemplate, turnData);
+	$('#turnBoard').html(turnHTML);
+}

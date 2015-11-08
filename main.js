@@ -10,7 +10,7 @@ function Player(){
 //Game object
 
 function Game() {
-	this.turnCount = 10;
+	this.turnCount = 0;
 
 }
 
@@ -26,7 +26,7 @@ function Question() {
 
 var player1 = new Player();
 
-var currentGame = new Game();
+
 
 
 
@@ -55,7 +55,7 @@ function getNewGameSet() {
 		return gameSet;
 	}
 
-	currentGame.quizSet = getNewGameSet();
+
 	console.log(currentGame.quizSet);
 	console.log(currentGame.quizSet[0][1][5]);
 
@@ -129,19 +129,40 @@ function getSolutions(problem) {
 		return sortedSolutions;
 	}// End of function getSolutions........
 
-	// var theseSolutions = getSolutions(currentGame.quizSet);
 
+function playGame() {
+var currentGame = new Game();
+currentGame.quizSet = getNewGameSet();
+	for (var i = 1; i < 11; i++) {
+		currentGame.turnCount += 1;
+		displayTurn(i);
+		var turnVal = executeTurn(currentGame.quizSet[i]);
+		displayResult(currentGame.quizSet[i], turnVal);
+		$('#next-turn').click(function(e){
+			e.preventDefault();
+		});
+	}
+}
 
-
-
-		// 		// var currentProblem = remainingProblems[probNum];
-	// 		// remainingProblems.splice(probNum, 1);
-	// 		// console.log(remainingProblems.count);
-	// 		// currentGame.turncount -= 1;
-	// 		// // return currentProblem;
-	//
-	// }
-
+function executeTurn(set) {
+	$('.choice-button').click(function(e){
+		e.preventDefault();
+		var ch =	$(this).prop('id').substr(1,1);
+		var chN = Number(ch);
+		var thisChoice = set[1][chN];
+		var turnScore = 0;
+			if (thisChoice.id === set[0].id) {
+				turnScore = 10;
+			}else if (thisChoice.id === set[0].alt1){
+				turnScore = 5;
+			}else if (thisChoice.id === set[0].alt2){
+				turnScore = 3;
+			}else {
+				turnScore = 0;
+			}
+	});
+	return turnScore;
+}
 
 
 
