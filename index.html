@@ -6,6 +6,13 @@
   <link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body>
+ <div id="playBtn">
+    <button class='fontawesome-forward'></button>
+  </div>
+  <div id="pauseBtn">
+    <button class='fontawesome-pause'></button>
+  </div>
+<img id="akbar" src="http://createdbyrcw.files.wordpress.com/2013/05/admiral_ackbar_says_its_a_trap.jpg">
   <div class="title">
     <h1> Star Wars </h1>
     <h2> Rap Battles </h2>
@@ -20,7 +27,7 @@
       <button class="cred player1" type="button"> Heal Cred </button>
     </div>
     <div class="sc player1">
-      <span> Street Cred:<span class="credPoints"></span></span>
+      <span> Street Cred:<span class="credPoints">100</span></span>
     </div>
   </div>
 
@@ -37,7 +44,7 @@
       <button class="cred player2" type="button"> Heal Cred </button>
     </div>
     <div class="sc player2">
-      <span> Street Cred: <span class="credPoints"></span></span>
+      <span> Street Cred: <span class="credPoints">100</span></span>
     </div>
   </div>
 
@@ -52,6 +59,10 @@
   <div id= "reset">
     <button>Reset Game</button>
   </div>
+
+  <audio>
+    <source src="cantina.mp3"></source>
+  </audio>
 
 
   <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.4.min.js"></script>

@@ -6,6 +6,9 @@ var audio2 = new Audio('blaster.wav');
 
 var audio3 = new Audio('health.mp3');
 
+var audio4 = new Audio('cantina.mp3')
+
+
 
 $('#reset').on('click', function(){
   location.reload();
@@ -23,6 +26,14 @@ $('.cred').on('click', function(){
   (audio3).play();
 });
 
+$('.fontawesome-forward').on('click', function(){
+  (audio4).play();
+});
+
+$('.fontawesome-pause').on('click', function(){
+  (audio4).pause();
+});
+
 
 function minMax(min, max) {
   return Math.floor(Math.random() * max) + min;
@@ -35,14 +46,15 @@ function Player(container) {
   this.flow = function(opponent) {
     var flowChance = Math.random();
     if (opponent.streetCred <= 0) {
-      $('.lost').show();
+      $('.lost').fadeIn();
       $('#reset').show();
-    } else if (flowChance > .4) {
+      $('#akbar').fadeIn();
+    } else if (flowChance > .7) {
       opponent.streetCred -= minMax(1,11);
       opponent.container.find('.credPoints').html(opponent.streetCred);
       $('#description').html("YO!! You hit him with that flow! Next players turn!");
     } else {
-      $('#description').html("YO!! The flow is weak in " + this.name + "." + " Next players turn!");
+      $('#description').html("BRUH!! The flow is weak in " + this.name + "." + " Next players turn!");
     }
   }
   this.cred = function(player) {
@@ -55,17 +67,11 @@ function Player(container) {
     }
   }
 }
-
-
-
 var player1 = new Player('.player1');
 var player2 = new Player('.player2');
 
-
 player1.name = "Gangsta Chewie";
 player2.name = "Thug Trooper";
-
-
 
 $(".flow.player1").on('click', function() {
   player1.flow(player2);

@@ -1,3 +1,10 @@
+@import url(http://weloveiconfonts.com/api/?family=fontawesome);
+
+/* fontawesome */
+[class*="fontawesome-"]:before {
+  font-family: 'FontAwesome', sans-serif;
+}
+
 body {
   background: #1D2123;
 }
@@ -101,6 +108,7 @@ img {
   display: none;
   font-size: 200px;
   color: red;
+  z-index: 2;
 }
 
 #reset {
@@ -115,8 +123,40 @@ img {
   font-size: 15px;
   background-color: #FFE545;
   outline: none;
+  position: absolute;
+  z-index: 3;
 }
 
 #reset button:active {
   background-color: #e87e50;
+}
+
+#akbar {
+  height: 100%;
+  width: 100%;
+  display: none;
+  position: absolute;
+  top: 0;
+  z-index: 1;
+}
+.fontawesome-forward {
+  font-size: 20px;
+  background: none;
+  outline: none;
+  border: none;
+  color: grey;
+}
+.fontawesome-forward:active {
+  color: black;
+}
+
+.fontawesome-pause {
+  font-size: 20px;
+  background: none;
+  outline: none;
+  border: none;
+  color: grey;
+}
+.fontawesome-pause:active {
+  color: black;
 }
