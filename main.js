@@ -26,8 +26,16 @@ $(document).ready(function(){
 		$(".button").addClass("btnDarken");
 		$("body").css("background","#000");
 		$("#darth").fadeIn(1000);
-		$("#explosion").show();
-		
+		$("#explosion").show();	
+	}
+
+	function resetTotal() {
+		$('.button').prop('disabled', false);
+		$("#score").html("");
+		$(".button").removeClass("btnDarken");
+		$("body").css("background","#494848");
+		$("#darth").hide();
+		$("#explosion").hide();
 	}
 //compares both the arrays, if equal it calls animate function, if false it resets.
 
@@ -39,7 +47,7 @@ $(document).ready(function(){
 		$("#score").html(simonArr.length);
 		} else {
 			reset();
-			$("#start").hide();
+			
 			$("#playAgain").show().css("display","block");
 
 		}
@@ -53,32 +61,31 @@ $(document).ready(function(){
 		if($("#playAgain").is(":visible")){
 			simonArr=[];
 		};
-		
-
 	};
+
 		function minuteFunction() {
-		var counter = 61;
+
+		var counter = 101;
 		var minuteTimer=setInterval(function() {
   		--counter;
   		$("#counter").text(counter);
   		if(counter===0) {
   			clearInterval(minuteTimer);
-  			reset();
   			$("#playAgain").show();
-  			$("#metal").show();
 
   		};
 
-		}, 1000);
+		}, 200);
 
 	};
 
 
-
+	
 	$("#start").on('click',function(){
+		$(".button").removeClass("hover");
 		$('.button').prop('disabled', false);
 		$("#start").hide();
-		$("#scoreDiv").show();
+		simonArr=[];
 		simonArr.push(randomRange(1,4));
 		var startSound=new Audio("tone"+simonArr[0]+".wav");
 		startSound.play();
@@ -97,11 +104,14 @@ $(document).ready(function(){
 	});
 
 	$("#metal").on('click',function(){
+		$(".button").removeClass("hover");
+		resetTotal();
+		simonArr=[];
+		playerArr=[];
 		minuteFunction();
-		$('.button').prop('disabled', false);
-		$("#start").hide();
 		$("#metal").hide();
-		$("#scoreDiv").show();
+		audio5.pause();
+		$("#playAgain").hide();
 		simonArr.push(randomRange(1,4));
 		var startSound=new Audio("tone"+simonArr[0]+".wav");
 		startSound.play();
@@ -111,7 +121,7 @@ $(document).ready(function(){
 				$(".button").removeClass("glow");
 					},400);
 				};
-		if(simonArr.length>1) {
+				if(simonArr.length>1) {
 			simonArr=[randomRange(1,4)];
 			
 		}
@@ -120,11 +130,8 @@ $(document).ready(function(){
 	});
 
 	$("#playAgain").on('click',function(){
-		$("#score").html("");
-		$(".button").removeClass("btnDarken");
-		$("body").css("background","#494848");
-		$("#darth").hide();
-		$("#explosion").hide();
+		resetTotal();
+		$("#metal").show();
 		audio5.pause();
 		$("#playAgain").hide();
 		simonArr.push(randomRange(1,4));
