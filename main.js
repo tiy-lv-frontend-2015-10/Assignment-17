@@ -25,7 +25,7 @@ player1 = new Player();
 $('#name-submit').on('click', function(e){
 	e.preventDefault();
 	player1.name = $('#player-name').val();
-	$('#intro').hide();
+	$('#intro').fadeOut();
 	console.log(player1.name);
 });
 
@@ -58,7 +58,7 @@ function getNewProblems() {
 	currentGame.problemSet = getNewProblems();
 	console.log(currentGame.problemSet[0]);
 
-
+//Solution selection logic, based on generated problem.......
 function getSolutions(problem) {
 		var remainingSolutions = solutions;
 		var top3 = [];
