@@ -78,7 +78,7 @@ function Player() {
 		$("#z_hp").html(p2.health);
 		$("#action").append(p1.name + " did some crazy sweet moves on " + p2.name + " that caused critical damage! " + "<br/>");
 		if (p2.health <= 0) {
-			alert("You have defeated the " + p2.name + " attack! " + "<br/>");
+			alert("You have defeated the " + p2.name + " attack!");
 			location.reload();
 		} else if (p1.health <=0) {
 			alert("GAME OVER! You killed " + p1.name);
