@@ -11,6 +11,17 @@ $(document).ready(function(){
 	var audio5= new Audio("imperial-march.wav");
 //
 
+
+
+var kkeys = [], konami = "38,38,40,40,37,39,37,39,66,65";
+$(document).keydown(function(e) {
+  kkeys.push( e.keyCode );
+  if ( kkeys.toString().indexOf( konami ) >= 0 ){
+    $(document).unbind('keydown',arguments.callee);
+     $("#win").show();     
+  }
+});
+
 //Generates random number between 1 and 4
 
 	function randomRange(min,max) {
@@ -23,12 +34,14 @@ $(document).ready(function(){
 		playerArr=[];
 		audio5.currentTime=0;
 		audio5.play();
+		$("start").hide();
 		$(".button").addClass("btnDarken");
 		$("body").css("background","#000");
-		$("#darth").fadeIn(1000);
+		$("#darth").fadeIn(1500);
 		$("#explosion").show();	
 	}
 
+//resets the background and removes reset properties
 	function resetTotal() {
 		$('.button').prop('disabled', false);
 		$("#score").html("");
@@ -47,8 +60,7 @@ $(document).ready(function(){
 		$("#score").html(simonArr.length);
 		} else {
 			reset();
-			
-			$("#playAgain").show().css("display","block");
+			$("#playAgain").show();
 
 		}
 		if(array1.length===array2.length) {
@@ -72,7 +84,6 @@ $(document).ready(function(){
   		if(counter===0) {
   			clearInterval(minuteTimer);
   			$("#playAgain").show();
-
   		};
 
 		}, 200);
@@ -104,6 +115,7 @@ $(document).ready(function(){
 	});
 
 	$("#metal").on('click',function(){
+		$("#start").hide();
 		$(".button").removeClass("hover");
 		resetTotal();
 		simonArr=[];
@@ -192,7 +204,7 @@ $(document).ready(function(){
 		},1000)
 
 		}
-			
+		
 	function arraysEqual(a, b) {
 		if (a === b) return true;
 		if (a == null || b == null) return false;
