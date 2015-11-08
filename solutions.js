@@ -8,7 +8,7 @@ var solutions = [
 {id: 6, name: "Buy flowers"},
 {id: 7, name: "Pack a swimsuit"},
 {id: 8, name: "Clean the Bathroom"},
-{id: 9, name: "Play Indian Love Call by Slim Whitman"},
+{id: 9, name: "Play 'Indian Love Call' by Slim Whitman"},
 {id: 10, name: "Laser blaster"},
 {id: 11, name: "Go all in"},
 {id: 12, name: "Jump to Hyperspace"},
@@ -50,8 +50,7 @@ var solutions = [
 {id: 48, name: "Use the Force"},
 {id: 49, name: "Light saber"},
 {id: 50, name: "Drink Coffee"},
-
-
+//End of primary solutions*******
 {id: 51, name: "Flame Thrower"},
 {id: 52, name: "Towel"},
 {id: 53, name: "Take off all your clothes"},
@@ -80,7 +79,10 @@ var solutions = [
 {id: 76, name: "Call a plumber"},
 {id: 77, name: "Motel 6"},
 {id: 78, name: "Clog dancing"},
-{id: 79, name: "Baseball bat"}
+{id: 79, name: "Baseball bat"},
+{id: 80, name: "Triple-A (not the auto club)"},
+{id: 81, name: "Fire hose"},
+{id: 82, name: "Wool blanket"}
 ];
 
 // var sortedSolutions = solutions.sort(function(a,b){

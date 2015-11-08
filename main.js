@@ -1,9 +1,9 @@
 //Player object
 
-function Player(name, gender){
+function Player(){
 
-	this.name = name;
-	this.gender = gender;
+	this.name = '';
+	// this.gender = gender;
 	this.score = 0;
 }
 
@@ -33,10 +33,9 @@ var player1 = new Player();
 
 var currentGame = new Game();
 
-// Game.prototype.
 
-// Game.prototype.
-// var problemSet = [];
+
+ Game.prototype.problemSet = [];
 
 
 
@@ -44,44 +43,119 @@ var currentGame = new Game();
 
 function getNewProblems() {
 	var remainingProblems = problems;
-	var problemSet = [];
+	var qSet = [];
 		for (var i = 1; i < 11; i++) {
 			var currentProblem = {};
-			var min = 0, max = remainingProblems.length -1;
-		  var probNum = Math.floor(Math.random() * (max - min)) + min;
+			var min = 1, max = remainingProblems.length -1;
+		  var probNum = Math.ceil(Math.random() * (max - min)) + min;
 			currentProblem = remainingProblems[probNum];
-			console.log(currentProblem);
-			problemSet.push(currentProblem);
-			// console.log(problemSet);
-			remainingProblems.splice(currentProblem, 1);
-			console.log(remainingProblems.length);
+			qSet.push(currentProblem);
+			remainingProblems.splice(remainingProblems.indexOf(currentProblem), 1);
 		}
-		return problemSet;
+		return qSet;
 	}
 
-	getNewProblems();
-	
+	currentGame.problemSet = getNewProblems();
+	console.log(currentGame.problemSet[0]);
+
+
+function getSolutions(problem) {
+		var remainingSolutions = solutions;
+		var top3 = [];
+
+			var answer = solutions.filter(function(item) {
+						if (item.id === problem.id) {
+							return true;
+						} else {
+							return false;
+						}
+					});
+			top3.push(answer[0]);
+
+			remainingSolutions.splice((remainingSolutions.indexOf(answer[0])), 1);
+			// console.log(remainingSolutions[4]);
+			// **************************************************
+			var alt1 = solutions.filter(function(item){
+						if (item.id === problem.alt[0]) {
+							return true;
+						}else {
+							return false;
+						}
+					});
+			top3.push(alt1[0]);
+
+			remainingSolutions.splice((remainingSolutions.indexOf(alt1[0])), 1);
+
+			// ******************************************
+			var alt2 = solutions.filter(function(item){
+						if (item.id === problem.alt[1]) {
+							return true;
+						}else {
+							return false;
+						}
+					});
+			top3.push(alt2[0]);
+			remainingSolutions.splice((remainingSolutions.indexOf(alt2[0])), 1);
+
+
+
+
+
+
+		console.log(top3[0]);
+		console.log(top3[1]);
+		console.log(top3[2]);
+		var next3 = [];
+
+			for (var i = 1; i < 4; i++) {
+				var currentSolution = {};
+				var min = 1, max = remainingSolutions.length -1;
+			  var solutionNum = Math.ceil(Math.random() * (max - min)) + min;
+				// console.log(solutionNum);
+				currentSolution = remainingSolutions[solutionNum];
+				// console.log(currentSolution);
+				next3.push(currentSolution);
+				remainingSolutions.splice(remainingSolutions.indexOf(currentSolution), 1);
+			}
+
+		console.log(next3[0]);
+		console.log(next3[1]);
+		console.log(next3[2]);
+		var qPanel = top3.concat(next3);
+		return qPanel;
+	}
+
+	var theseSolutions = getSolutions(currentGame.problemSet[0]);
+
+	// console.log(theseSolutions[0].id);
+	// var sortedSolutions = theseSolutions.sort(function(a,b){
+	// 	if (a.name > b.name) {
+	// 		return 1;
+	// 	}
+	// 	if (a.name < b.name) {
+	// 	 return -1;
+	//  }
+	//  // a must be equal to b
+	//  return 0;
+	// });
+
+	// console.log(sortedSolutions);
+	console.log(theseSolutions);
+	// console.log(theseSolutions[0][0]);
+	// console.log(theseSolutions[1][0]);
+	// console.log(theseSolutions[2][0]);
+	// console.log(theseSolutions[3]);
+	// console.log(theseSolutions[4]);
+	// console.log(theseSolutions[5]);
 
 
 	//
 	// 		var top6 = [];
-	// 		var answer = solutions.filter(function(item) {
-	// 			if (item.id === remainingProblems[probNum].id) {
-	// 				return true;
-	// 			} else {
-	// 				return false;
-	// 			}
-	// 		});
+	//
 	// 		top6.push(answer);
 	// 		remainingSolutions.splice(answer, 1);
 	//
-	// 		var alt1 = solutions.filter(function(item){
-	// 			if (item.id === remainingProblems[probNum].alt[0]) {
-	// 				return true;
-	// 			}else {
-	// 				return false;
-	// 			}
-	// 		});
+	//
 	// 		top6.push(alt1);
 	// 		remainingSolutions.splice(alt1, 1);
 	//
