@@ -198,10 +198,10 @@ Player.prototype.reset = function reset (targetOwner) {
 	targetOwner.sanity = 100;
 };
 
-p2.reset(p1);
+p1.reset(p2);
 
 resetButton.addEventListener("click", function(e){
-	p2.reset(p1);
+	p1.reset(p2);
 	alert(p2.name + " has regained full sanity.");})
 
 

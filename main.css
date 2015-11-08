@@ -52,9 +52,14 @@ h1 {
 	display: inline-block;
 }
 
+#secondp img {
+	width: 200px;
+	height: 225px;
+}
+
 #attackButtons {
 	position: absolute;
-	top: 460px;
+	top: 440px;
 }
 
 #attackButtons img {
@@ -64,7 +69,7 @@ h1 {
 
 #healButtons {
 	position: absolute;
-	top: 525px;
+	top: 500px;
 }
 #healButtons img {
 	width: 100px;
@@ -74,4 +79,12 @@ h1 {
 #reset {
 	position: absolute;
 	top: 625px;
+	left: 550px;
+	margin: 0 auto;
+	display: block;
+}
+
+#resetButton img {
+	margin: 0 auto;
+
 }
