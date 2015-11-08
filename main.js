@@ -16,14 +16,17 @@ $('#reset').on('click', function(){
 
 $('.flow.player1').on('click', function(){
   (audio).play();
+  audio.currentTime = 0;
 });
 
 $('.flow.player2').on('click', function(){
   (audio2).play();
+  audio2.currentTime = 0;
 });
 
 $('.cred').on('click', function(){
   (audio3).play();
+  audio3.currentTime = 0;
 });
 
 $('.fontawesome-forward').on('click', function(){
