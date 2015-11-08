@@ -1,0 +1,205 @@
+0 info it worked if it ends with ok
+1 verbose cli [ 'node', '/usr/local/bin/npm', 'install', '--global', 'surge' ]
+2 info using npm@2.11.2
+3 info using node@v0.12.5
+4 verbose install initial load of /usr/local/lib/package.json
+5 verbose readDependencies loading dependencies from /usr/local/lib/package.json
+6 silly cache add args [ 'surge', null ]
+7 verbose cache add spec surge
+8 silly cache add parsed spec { raw: 'surge',
+8 silly cache add   scope: null,
+8 silly cache add   name: 'surge',
+8 silly cache add   rawSpec: '',
+8 silly cache add   spec: '*',
+8 silly cache add   type: 'range' }
+9 silly addNamed surge@*
+10 verbose addNamed "*" is a valid semver range for surge
+11 silly addNameRange { name: 'surge', range: '*', hasData: false }
+12 silly mapToRegistry name surge
+13 silly mapToRegistry using default registry
+14 silly mapToRegistry registry https://registry.npmjs.org/
+15 silly mapToRegistry uri https://registry.npmjs.org/surge
+16 verbose addNameRange registry:https://registry.npmjs.org/surge not in flight; fetching
+17 verbose request uri https://registry.npmjs.org/surge
+18 verbose request no auth needed
+19 info attempt registry request try #1 at 12:22:55 PM
+20 verbose request id 2c9b9d45f516e396
+21 verbose etag "7LLN9IISKFH7LRZVNWQF1PF8W"
+22 http request GET https://registry.npmjs.org/surge
+23 http 200 https://registry.npmjs.org/surge
+24 silly get cb [ 200,
+24 silly get   { server: 'CouchDB/1.5.0 (Erlang OTP/R16B03)',
+24 silly get     etag: '"CM0O76PSR2S3FFYGTP50RQBJV"',
+24 silly get     'content-type': 'application/json',
+24 silly get     'cache-control': 'max-age=60',
+24 silly get     'content-length': '43965',
+24 silly get     'accept-ranges': 'bytes',
+24 silly get     date: 'Sun, 08 Nov 2015 20:22:55 GMT',
+24 silly get     via: '1.1 varnish',
+24 silly get     age: '0',
+24 silly get     connection: 'keep-alive',
+24 silly get     'x-served-by': 'cache-lax1424-LAX',
+24 silly get     'x-cache': 'MISS',
+24 silly get     'x-cache-hits': '0',
+24 silly get     'x-timer': 'S1447014175.447738,VS0,VE133',
+24 silly get     vary: 'Accept' } ]
+25 verbose get saving surge to /Users/nickreynolds/.npm/registry.npmjs.org/surge/.cache.json
+26 silly addNameRange number 2 { name: 'surge', range: '*', hasData: true }
+27 silly addNameRange versions [ 'surge',
+27 silly addNameRange   [ '0.0.0',
+27 silly addNameRange     '0.1.0',
+27 silly addNameRange     '0.2.0',
+27 silly addNameRange     '0.3.0',
+27 silly addNameRange     '0.3.1',
+27 silly addNameRange     '0.3.2',
+27 silly addNameRange     '0.3.3',
+27 silly addNameRange     '0.4.0',
+27 silly addNameRange     '0.4.1',
+27 silly addNameRange     '0.5.0',
+27 silly addNameRange     '0.5.1',
+27 silly addNameRange     '0.5.2',
+27 silly addNameRange     '0.6.0',
+27 silly addNameRange     '0.7.0',
+27 silly addNameRange     '0.7.1',
+27 silly addNameRange     '0.7.2',
+27 silly addNameRange     '0.7.3',
+27 silly addNameRange     '0.7.4',
+27 silly addNameRange     '0.8.0',
+27 silly addNameRange     '0.8.1',
+27 silly addNameRange     '0.9.0',
+27 silly addNameRange     '0.10.0',
+27 silly addNameRange     '0.10.1',
+27 silly addNameRange     '0.10.2',
+27 silly addNameRange     '0.11.0',
+27 silly addNameRange     '0.11.1',
+27 silly addNameRange     '0.12.0',
+27 silly addNameRange     '0.13.0',
+27 silly addNameRange     '0.14.0',
+27 silly addNameRange     '0.14.1',
+27 silly addNameRange     '0.14.2',
+27 silly addNameRange     '0.14.3',
+27 silly addNameRange     '0.14.4',
+27 silly addNameRange     '0.15.0',
+27 silly addNameRange     '0.16.0',
+27 silly addNameRange     '0.17.0',
+27 silly addNameRange     '0.17.1',
+27 silly addNameRange     '0.17.2' ] ]
+28 silly addNamed surge@0.17.2
+29 verbose addNamed "0.17.2" is a plain semver version for surge
+30 silly mapToRegistry name surge
+31 silly mapToRegistry using default registry
+32 silly mapToRegistry registry https://registry.npmjs.org/
+33 silly mapToRegistry uri https://registry.npmjs.org/surge
+34 verbose addRemoteTarball https://registry.npmjs.org/surge/-/surge-0.17.2.tgz not in flight; adding
+35 verbose addRemoteTarball [ 'https://registry.npmjs.org/surge/-/surge-0.17.2.tgz',
+35 verbose addRemoteTarball   '8c2e9aba2827cdef3cdd979a04d3734d58f72d8a' ]
+36 info retry fetch attempt 1 at 12:22:55 PM
+37 info attempt registry request try #1 at 12:22:55 PM
+38 http fetch GET https://registry.npmjs.org/surge/-/surge-0.17.2.tgz
+39 http fetch 200 https://registry.npmjs.org/surge/-/surge-0.17.2.tgz
+40 silly fetchAndShaCheck shasum 8c2e9aba2827cdef3cdd979a04d3734d58f72d8a
+41 verbose addTmpTarball /var/folders/m1/g5fyrqj94nldnmgdj3gf_jlh0000gn/T/npm-575-9104e82d/registry.npmjs.org/surge/-/surge-0.17.2.tgz not in flight; adding
+42 verbose addTmpTarball already have metadata; skipping unpack for surge@0.17.2
+43 silly cache afterAdd surge@0.17.2
+44 verbose afterAdd /Users/nickreynolds/.npm/surge/0.17.2/package/package.json not in flight; writing
+45 verbose afterAdd /Users/nickreynolds/.npm/surge/0.17.2/package/package.json written
+46 silly install resolved [ { name: 'surge',
+46 silly install resolved     version: '0.17.2',
+46 silly install resolved     description: 'CDN for front-end developers',
+46 silly install resolved     author: { name: 'Brock Whitten', email: 'brock@chloi.io' },
+46 silly install resolved     bin: { surge: './lib/cli.js' },
+46 silly install resolved     dependencies:
+46 silly install resolved      { du: '0.1.0',
+46 silly install resolved        'fstream-ignore': '1.0.2',
+46 silly install resolved        'is-domain': '0.0.1',
+46 silly install resolved        moniker: '0.1.2',
+46 silly install resolved        netrc: '0.1.4',
+46 silly install resolved        prompt: '~0.2.14',
+46 silly install resolved        progress: '1.1.8',
+46 silly install resolved        request: '2.40.0',
+46 silly install resolved        split: '0.3.1',
+46 silly install resolved        'surge-ignore': '0.2.0',
+46 silly install resolved        tar: '1.0.0',
+46 silly install resolved        'tar.gz': '0.1.1',
+46 silly install resolved        'url-parse-as-address': '1.0.0',
+46 silly install resolved        read: '1.0.5',
+46 silly install resolved        minimist: '1.1.1' },
+46 silly install resolved     devDependencies: { mocha: '*', nixt: '0.4.1', should: '7.1.0' },
+46 silly install resolved     license: 'ISC',
+46 silly install resolved     main: './lib/surge.js',
+46 silly install resolved     ignore: [ 'test' ],
+46 silly install resolved     scripts: { test: 'mocha' },
+46 silly install resolved     repository: { type: 'git', url: 'git+https://github.com/sintaxi/surge.git' },
+46 silly install resolved     gitHead: 'e986324b3efadbc17169605d613e8cb59213bc03',
+46 silly install resolved     bugs: { url: 'https://github.com/sintaxi/surge/issues' },
+46 silly install resolved     homepage: 'https://github.com/sintaxi/surge#readme',
+46 silly install resolved     _id: 'surge@0.17.2',
+46 silly install resolved     _shasum: '8c2e9aba2827cdef3cdd979a04d3734d58f72d8a',
+46 silly install resolved     _from: 'surge@*',
+46 silly install resolved     _npmVersion: '2.11.3',
+46 silly install resolved     _nodeVersion: '0.12.7',
+46 silly install resolved     _npmUser: { name: 'kennethormandy', email: 'hello@kennethormandy.com' },
+46 silly install resolved     dist:
+46 silly install resolved      { shasum: '8c2e9aba2827cdef3cdd979a04d3734d58f72d8a',
+46 silly install resolved        tarball: 'http://registry.npmjs.org/surge/-/surge-0.17.2.tgz' },
+46 silly install resolved     maintainers: [ [Object], [Object] ],
+46 silly install resolved     directories: {},
+46 silly install resolved     _resolved: 'https://registry.npmjs.org/surge/-/surge-0.17.2.tgz' } ]
+47 info install surge@0.17.2 into /usr/local/lib
+48 info installOne surge@0.17.2
+49 verbose installOne of surge to /usr/local/lib not in flight; installing
+50 verbose lock using /Users/nickreynolds/.npm/_locks/surge-9264acc302f55897.lock for /usr/local/lib/node_modules/surge
+51 silly install write writing surge 0.17.2 to /usr/local/lib/node_modules/surge
+52 verbose unbuild lib/node_modules/surge
+53 info preuninstall surge@0.17.0
+54 info uninstall surge@0.17.0
+55 verbose unbuild rmStuff surge@0.17.0 from /usr/local/lib/node_modules
+56 silly gentlyRm /usr/local/bin/surge is being gently removed
+57 silly gentlyRm verifying /usr/local is an npm working directory
+58 silly gentlyRm containing path /usr/local is under npm's control, in /usr/local
+59 silly gentlyRm deletion target /usr/local/bin/surge is under /usr/local
+60 verbose gentlyRm vacuuming from /usr/local/bin/surge up to /usr/local
+61 silly vacuum-fs removing /usr/local/bin/surge
+62 silly vacuum-fs quitting because other entries in /usr/local/bin
+63 info postuninstall surge@0.17.0
+64 silly gentlyRm /usr/local/lib/node_modules/surge is being purged from base /usr/local
+65 verbose gentlyRm don't care about contents; nuking /usr/local/lib/node_modules/surge
+66 silly vacuum-fs purging /usr/local/lib/node_modules/surge
+67 verbose unlock done using /Users/nickreynolds/.npm/_locks/surge-9264acc302f55897.lock for /usr/local/lib/node_modules/surge
+68 verbose stack Error: EACCES, rmdir '/usr/local/lib/node_modules/surge'
+68 verbose stack     at Error (native)
+69 verbose cwd /Users/nickreynolds/tiy-workspace/Assignment-17
+70 error Darwin 15.0.0
+71 error argv "node" "/usr/local/bin/npm" "install" "--global" "surge"
+72 error node v0.12.5
+73 error npm  v2.11.2
+74 error path /usr/local/lib/node_modules/surge
+75 error code EACCES
+76 error errno -13
+77 error Error: EACCES, rmdir '/usr/local/lib/node_modules/surge'
+77 error     at Error (native)
+77 error  { [Error: EACCES, rmdir '/usr/local/lib/node_modules/surge']
+77 error   errno: -13,
+77 error   code: 'EACCES',
+77 error   path: '/usr/local/lib/node_modules/surge' }
+78 error Please try running this command again as root/Administrator.
+79 verbose exit [ -13, true ]
+80 verbose unbuild lib/node_modules/surge
+81 info preuninstall surge@0.17.0
+82 info uninstall surge@0.17.0
+83 verbose unbuild rmStuff surge@0.17.0 from /usr/local/lib/node_modules
+84 silly gentlyRm /usr/local/bin/surge is being gently removed
+85 silly gentlyRm verifying /usr/local is an npm working directory
+86 silly gentlyRm containing path /usr/local is under npm's control, in /usr/local
+87 silly gentlyRm deletion target /usr/local/bin/surge is under /usr/local
+88 verbose gentlyRm vacuuming from /usr/local/bin/surge up to /usr/local
+89 info postuninstall surge@0.17.0
+90 silly gentlyRm /usr/local/lib/node_modules/surge is being purged from base /usr/local
+91 verbose gentlyRm don't care about contents; nuking /usr/local/lib/node_modules/surge
+92 silly vacuum-fs purging /usr/local/lib/node_modules/surge
+93 error error rolling back Error: EACCES, rmdir '/usr/local/lib/node_modules/surge'
+93 error error rolling back     at Error (native)
+93 error error rolling back  { [Error: EACCES, rmdir '/usr/local/lib/node_modules/surge']
+93 error error rolling back   errno: -13,
+93 error error rolling back   code: 'EACCES',
+93 error error rolling back   path: '/usr/local/lib/node_modules/surge' }

@@ -1,0 +1,162 @@
+@import url(http://weloveiconfonts.com/api/?family=fontawesome);
+
+/* fontawesome */
+[class*="fontawesome-"]:before {
+  font-family: 'FontAwesome', sans-serif;
+}
+
+body {
+  background: #1D2123;
+}
+
+img {
+  height: 200px;
+  width: 300px;
+}
+
+.title {
+  text-align: center;
+  color: #ecc760;
+}
+
+.title h1 {
+  font-size: 50px;
+}
+.title h2 {
+  font-size: 40px;
+}
+
+.battleContainer {
+  border: 1px solid #59626d;
+  width: 300px;
+  float: left;
+  margin-left: 150px;
+}
+
+#vs {
+  color: #e87e50;
+  font-size: 30px;
+  margin-top: 50px;
+  margin-left: 140px;
+  float: left;
+}
+
+.buttonContainer {
+  background: #eae3c6;
+  margin-top: -2px;
+  padding-top: 7px;
+  padding-bottom: 5px;
+}
+
+.flow {
+  margin-left: 35px;
+  background-color: #607b5e;
+  color: #eae3c6;
+  border-radius: 2em;
+  border-style: none;
+  outline: none;
+  font-size: 15px;
+
+}
+
+.flow:active {
+  background-color: #1d73d6;
+  box-shadow: 0 3px #27496d;
+}
+
+.cred {
+  background-color: #a7382e;
+  color: #eae3c6;
+  margin-left: 25px;
+  border-radius: 2em;
+  border-style: none;
+  outline: none;
+  font-size: 15px;
+}
+
+.cred:active {
+  background-color: #1d73d6;
+  box-shadow: 0 3px #27496d;
+}
+
+.sc {
+  border-top: 2px solid #59626d;
+  padding-top: 7px;
+  color: #59626d;
+  background: #eae3c6;
+}
+
+.descriptionBox {
+  background-color: #425776;
+  color: #fff4c4;
+  border: 1px solid white;
+  width: 300px;
+  height: 50px;
+  position: relative;
+  top: 13em;
+  left: 30em;
+}
+
+#description {
+  position: relative;
+  bottom: 16em;
+}
+
+.lost {
+  position: absolute;
+  top: 0;
+  display: none;
+  font-size: 200px;
+  color: red;
+  z-index: 2;
+}
+
+#reset {
+  display: none;
+  position: relative;
+  top: 15em;
+  right: 33.5em;
+}
+
+#reset button {
+  border-style: none;
+  font-size: 15px;
+  background-color: #FFE545;
+  outline: none;
+  position: absolute;
+  z-index: 3;
+}
+
+#reset button:active {
+  background-color: #e87e50;
+}
+
+#akbar {
+  height: 100%;
+  width: 100%;
+  display: none;
+  position: absolute;
+  top: 0;
+  z-index: 1;
+}
+.fontawesome-forward {
+  font-size: 20px;
+  background: none;
+  outline: none;
+  border: none;
+  color: grey;
+}
+.fontawesome-forward:active {
+  color: black;
+}
+
+.fontawesome-pause {
+  font-size: 20px;
+  background: none;
+  outline: none;
+  border: none;
+  color: grey;
+}
+.fontawesome-pause:active {
+  color: black;
+}
