@@ -1,71 +1,123 @@
-function Character (name, health, weapon) {
-  this.name = name;
-  this.health = health;
-  this.weapon = weapon;
+$( document ).ready(function() {
 
-  this.isAlive = function(){
-    return this.health > 0; 
-  }
 
-  this.attack = function attack(opponent) {
-    var weaponDamage = this.weapon.damage();
-    opponent.health = opponent.health - weaponDamage;
-    console.log(this.name + " just attacked " + opponent.name + " for " + weaponDamage + " points!");
-    console.log(opponent.name + "'s health is now " + opponent.health);
-    console.log("");
-  };
+    //
+    // GAME OBJECTS
+    //
 
-  /* we may use these in the future. Keep them for now
 
-  this.killHit = function (opponent) {
-    opponent.heal -= this.randomCrit();
-  };
-  
-  this.randomCrit = function () {
-    var max = 20;
-    var min = 11;
+    //
+    // Character object
+    // Description: This is the object that represents a character in the game
+    //
+    function Character (name, health, weapon) {
+        this.name = name;
+        this.health = health;
+        this.weapon = weapon;
 
-    return Math.floor(Math.random() * (max - min) + min);
+        this.isAlive = function(){
+            return this.health > 0; 
+        }
 
-  }
-  */
-};
+        this.attack = function attack(opponent) {
+            var weaponDamage = this.weapon.damage();
+            opponent.health = opponent.health - weaponDamage;
+            console.log(this.name + " just attacked " + opponent.name + " for " + weaponDamage + " points!");
+            console.log(opponent.name + "'s health is now " + opponent.health);
+            console.log("");
+        };
+    };
 
-function Weapon(name, minAttack, maxAttack){
-  this.name = name;
-  this.minAttack = minAttack;
-  this.maxAttack = maxAttack;
+    //
+    // Weapon object
+    // Description: This is the object that represents a character's weapon
+    //
+    function Weapon(name, minAttack, maxAttack){
+        this.name = name;
+        this.minAttack = minAttack;
+        this.maxAttack = maxAttack;
 
-  function getRandomInt(min, max) {
-    return Math.floor(Math.random() * (max - min + 1)) + min;
-  }
+        function getRandomInt(min, max) {
+            return Math.floor(Math.random() * (max - min + 1)) + min;
+        }
 
-  this.damage = function(){
-    return getRandomInt(this.minAttack, this.maxAttack);
-  }
-}
+        this.damage = function(){
+            return getRandomInt(this.minAttack, this.maxAttack);
+        }
+    }
 
-function declareWinner(player){
-  alert(player.name + " is the winner!!");
- }
 
-// my players 
-var sword = new Weapon("Sword", 0, 20);
-var knight = new Character("Knight", 50, sword);
+    //
+    // UTILITY FUNCTIONS
+    //
 
-var flame = new Weapon("Flame", 0, 10);
-var dragon = new Character("Dragon", 100, flame);
+    //
+    // declareWinner
+    // Description: Declares the winner of the game
+    //
+    function declareWinner(player){
+        alert(player.name + " is the winner!!");
+    }
 
-while (knight.isAlive() && dragon.isAlive()) {
-  knight.attack(dragon);
-  if (!dragon.isAlive()){
-    declareWinner(knight);
-    break;
-  }
+    //
+    // playGame
+    // Description: The characters fight to the death!
+    //
+    function playGame(){
+        var selectedCharacter = $( "#characterSelect option:selected" ).val();
+        if (selectedCharacter.toLowerCase() === "knight"){
+            var player = knight;
+            var computer = dragon;
+        }
+        else {
+            var player = dragon;
+            var computer = knight;
+        }
 
-  dragon.attack(knight);
-  if (!knight.isAlive()){
-    declareWinner(dragon);
-    break;
-  }
-}
+        while (player.isAlive() && computer.isAlive()) {
+            player.attack(computer);
+            if (!computer.isAlive()){
+                declareWinner(player);
+                break;
+            }
+
+            computer.attack(player);
+            if (!player.isAlive()){
+                declareWinner(computer);
+                break;
+            }
+        }
+        
+    }
+
+    
+    //
+    // promptUserForCharacter
+    // Description: Asks the user which character to be
+    //
+    function promptUserForCharacter(){
+
+        // render user prompt for character with mustache
+        var data = {characters: [knight, dragon]}
+        var characterPromptTemplate = $("#characterPromptTemplate").text();
+        var characterHtml = Mustache.render(characterPromptTemplate, data);
+        $("#user-prompt").html(characterHtml);
+
+        $("#choiceBtn").click(playGame);
+       
+    }
+
+
+    //
+    // START THE GAME
+    //
+
+    // our characters 
+    var sword = new Weapon("Sword", 0, 20);
+    var knight = new Character("Knight", 50, sword);
+
+    var flame = new Weapon("Flame", 0, 10);
+    var dragon = new Character("Dragon", 100, flame);
+
+    promptUserForCharacter();
+});
