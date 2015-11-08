@@ -1,0 +1,90 @@
+body {
+	width: 900px;
+	margin: 0 auto;
+	padding: 0 0 0 0;
+	background: black;
+}
+
+h1 {
+	font-family: "ABeeZee";
+	text-align: center;
+}
+
+
+#top {
+	width: 900px;
+	height: 40px;
+	margin: 0 auto;
+	padding: 0 0 0 0;
+}
+
+#top img {
+	width: 900px;
+	height: 72px;
+	margin: 0 auto;
+	padding: 0 0 0 0;
+}
+
+#firstp {
+	color: white;
+	font-size: 13px;
+	font-weight: bold;
+	margin-top: 100px;
+	font-family: "Arial", "sans-serif";
+	text-align: center;
+	width: 250px;
+	height: 100px;
+	float: left;
+	display: inline-block;
+	margin-right: 200px;
+}
+
+#secondp {
+	color: white;
+	font-size: 13px;
+	font-weight: bold;
+	margin-top: 100px;
+	font-family: "Arial", "sans-serif";
+	text-align: center;
+	width: 250px;
+	height: 100px;
+	float: left;
+	display: inline-block;
+}
+
+#secondp img {
+	width: 200px;
+	height: 225px;
+}
+
+#attackButtons {
+	position: absolute;
+	top: 440px;
+}
+
+#attackButtons img {
+	width: 100px;
+	height: 41px;
+}
+
+#healButtons {
+	position: absolute;
+	top: 500px;
+}
+#healButtons img {
+	width: 100px;
+	height: 41px;
+}
+
+#reset {
+	position: absolute;
+	top: 625px;
+	left: 550px;
+	margin: 0 auto;
+	display: block;
+}
+
+#resetButton img {
+	margin: 0 auto;
+
+}
