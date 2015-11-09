@@ -18,7 +18,11 @@ $(document).keydown(function(e) {
   kkeys.push( e.keyCode );
   if ( kkeys.toString().indexOf( konami ) >= 0 ){
     $(document).unbind('keydown',arguments.callee);
-     $("#win").show();     
+     $("#win").show();  
+     $("#start").hide();  
+     $(".button").addClass("btnDarken");
+     $("#container").fadeOut(1000);
+     $("#playAgain").show();
   }
 });
 
@@ -143,6 +147,8 @@ $(document).keydown(function(e) {
 
 	$("#playAgain").on('click',function(){
 		resetTotal();
+		$("#container").show();
+		$("#win").hide();  
 		$("#metal").show();
 		audio5.pause();
 		$("#playAgain").hide();
