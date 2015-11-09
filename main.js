@@ -53,6 +53,7 @@ $(document).keydown(function(e) {
 		$("body").css("background","#494848");
 		$("#darth").hide();
 		$("#explosion").hide();
+
 	}
 //compares both the arrays, if equal it calls animate function, if false it resets.
 
@@ -100,6 +101,7 @@ $(document).keydown(function(e) {
 		$(".button").removeClass("hover");
 		$('.button').prop('disabled', false);
 		$("#start").hide();
+		$("#container").show();
 		simonArr=[];
 		simonArr.push(randomRange(1,4));
 		var startSound=new Audio("tone"+simonArr[0]+".wav");
@@ -121,6 +123,7 @@ $(document).keydown(function(e) {
 	$("#metal").on('click',function(){
 		$("#start").hide();
 		$(".button").removeClass("hover");
+		$("#container").show();
 		resetTotal();
 		simonArr=[];
 		playerArr=[];
@@ -147,9 +150,9 @@ $(document).keydown(function(e) {
 
 	$("#playAgain").on('click',function(){
 		resetTotal();
-		$("#container").show();
 		$("#win").hide();  
 		$("#metal").show();
+		$("#container").show();
 		audio5.pause();
 		$("#playAgain").hide();
 		simonArr.push(randomRange(1,4));
