@@ -1,6 +1,6 @@
 body {
 	width: 100%;
-	background-image: url("assets/deadpool_logo.jpg")
+	background: url("assets/deadpool_logo.jpg") no-repeat;
 }
 
 #header {
@@ -28,7 +28,7 @@ body {
 
 #deadpool {
 	display: none;
-	width: 290px;
+	width: 90%;
 	height: 320px;
 	position: relative;
 	border: 2px solid black;
@@ -114,19 +114,18 @@ body {
 	font-family: 'Shadows Into Light', cursive;
 	font-size: 17px;
 	color: white;
-	left: 10px;
-	top: 20px;
+	margin: auto;
 }
 
 #start{
 	position: relative;	
-	width: 175px;
-	height: 50px;
+	width: 40%;
+	height: 30%;
 	bottom: 10px;
-	top: 50px;
-	left: 225px;
+	top: 20%;
+	left: 29%;
 	border: 2px solid red;
-	border-radius: 200px;
+	border-radius: 30%;
 	background-color: #A7A7A7;
 	color: black;
 	font-family: 'Shadows Into Light', cursive;
@@ -148,19 +147,19 @@ body {
 
 #zombie1 {
 	display: none;
-	width: 280px;
+	width: 90%;
 	height: 320px;
 	position: relative;
 	border: 2px solid black;
 	border-radius: 6px;
-	left: 25px;
+	left: 18px;
 	top: 200px;
 
 }
 
 #footer {
 	border-top: 2px solid white;
-	height: 60px;
+	height: 40px;
 	text-align: center;
 }
 
