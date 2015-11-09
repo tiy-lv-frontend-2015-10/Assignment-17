@@ -84,7 +84,7 @@ if (secs < 1){
 secs--;
 var timer=setTimeout('countDown('+secs+',"'+elem+'")',1000);}
  
- countDown(5,"status");
+ countDown(60,"status");
  
 
     
