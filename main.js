@@ -10,23 +10,34 @@ $( document ).ready(function() {
     // Character object
     // Description: This is the object that represents a character in the game
     //
-    function Character (name, health, weapon) {
-        this.name = name;
+    function Character(health, weapon) {
         this.health = health;
         this.weapon = weapon;
-
-        this.isAlive = function(){
-            return this.health > 0; 
-        }
-
-        this.attack = function attack(opponent) {
-            var weaponDamage = this.weapon.damage();
-            opponent.health = opponent.health - weaponDamage;
-            console.log(this.name + " just attacked " + opponent.name + " for " + weaponDamage + " points!");
-            console.log(opponent.name + "'s health is now " + opponent.health);
-            console.log("");
-        };
     };
+
+    Character.prototype.isAlive = function(){
+        return this.health > 0; 
+    }
+
+    Character.prototype.attack = function attack(opponent) {
+        var weaponDamage = this.weapon.damage();
+        opponent.health = opponent.health - weaponDamage;
+        console.log(this.name + " just attacked " + opponent.name + " for " + weaponDamage + " points!");
+        console.log(opponent.name + "'s health is now " + opponent.health);
+        console.log("");
+    };
+
+
+    function Knight(){
+        this.name = "Knight";
+    }
+    Knight.prototype = new Character(35, new Weapon("sword", 0, 15));
+    
+
+    function Dragon(){
+        this.name = "Dragon";
+    }
+    Dragon.prototype = new Character(25, new Weapon("flame", 0, 8));
 
     //
     // Weapon object
@@ -187,13 +198,8 @@ $( document ).ready(function() {
     // START THE GAME
     //
     $('#startBtn').click(function() {
-
-        var sword = new Weapon("Sword", 0, 20);
-        var knight = new Character("Knight", 50, sword);
-
-        var flame = new Weapon("Flame", 0, 10);
-        var dragon = new Character("Dragon", 100, flame);
-
+        var knight = new Knight();
+        var dragon = new Dragon();
         promptUserForCharacter(knight, dragon);
 
     });
