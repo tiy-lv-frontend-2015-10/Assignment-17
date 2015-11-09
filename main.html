@@ -8,8 +8,14 @@
 <body>
     
     <div class="wrapper">
-        <div id="status"></div>
-        <div id="user-prompt"></div>
+        <div id="game-status"></div>
+        <div id="turn-status"></div>
+        <div id="user-prompt">
+            <div>Welcome to Dragon Slayer</div>
+            <div>Press Start to Begin</div>
+            <button id="startBtn">START</button>
+        </div>
+        <div id="next-move"></div>
     </div>
 
     <script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
@@ -18,12 +24,40 @@
 
     <script type="x-tmpl-mustache" id="characterPromptTemplate">
         <h3>Choose your character:</h3>
-        <select id="characterSelect">
+        <div id="characterChoice">
             {{#characters}}
-                <option value="{{name}}">{{name}}</option>
+                <div>
+                    <input name="characters" value="{{name}}" type="radio">{{name}}</input>
+                </div>
             {{/characters}}
-        </select>
-        <button id="choiceBtn" type="submit">Choose</button>
+            <div><button id="choiceBtn">Choose</button></div>
+        </div>
+    </script>
+
+    <script type="x-tmpl-mustache" id="showGameStatusTemplate">
+        <h3>Game Status</h3>
+        {{#characters}}
+            <div class="character-status">{{name}}s health: {{health}}</div>
+        {{/characters}}
+    </script>
+
+    <script type="x-tmpl-mustache" id="showTurnStatusTemplate">
+        <h3>Turn Status</h3>
+        {{#actions}}
+            <div class="turn-status">{{attacker}} {{action}}s this turn. {{defender}} loses {{damage}} health</div>
+        {{/actions}}
+    </script>
+
+    <script type="x-tmpl-mustache" id="userActionTemplate">
+        <h3>Choose your next move</h3>
+        <div id="nextMove">
+            {{#actions}}
+            <div>
+                <input name="actions" value="{{.}}" type="radio">{{.}}</input>
+            </div>
+            {{/actions}}
+            <div><button id="actionBtn">Choose</button></div>
+        </div>
     </script>
 </body>
 </html>

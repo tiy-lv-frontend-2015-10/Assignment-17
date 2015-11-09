@@ -59,12 +59,49 @@ $( document ).ready(function() {
         alert(player.name + " is the winner!!");
     }
 
+    function showGameStatus(player, computer){
+        var data = {characters: [player, computer]}
+        var showGameStatusTemplate = $("#showGameStatusTemplate").text();
+        var statusHtml = Mustache.render(showGameStatusTemplate, data);
+        $("#game-status").html(statusHtml);
+    }
+
+    function showTurnStatus(turnResult) {
+        var data = {actions: [{attacker: turnResult.firstAttacker,
+                                action: turnResult.firstAction,
+                                defender: turnResult.firstDefender,
+                                damage: turnResult.firstDamage},
+
+                              {attacker: turnResult.secondAttacker,
+                                action: turnResult.secondAction,
+                                defender: turnResult.secondDefender,
+                                damage: turnResult.secondDamage}]};
+
+        var showTurnStatusTemplate = $("#showTurnStatusTemplate").text();
+        var turnStatusHtml = Mustache.render(showTurnStatusTemplate, data);
+        $("#turn-status").html(turnStatusHtml);
+    }
+
     //
-    // playGame
-    // Description: The characters fight to the death!
+    // promptUserForCharacter
+    // Description: Asks the user which character to be
     //
-    function playGame(){
-        var selectedCharacter = $( "#characterSelect option:selected" ).val();
+    function promptUserForCharacter(knight, dragon){
+
+        // render user prompt for character with mustache
+        var data = {characters: [knight, dragon]}
+        var characterPromptTemplate = $("#characterPromptTemplate").text();
+        var characterHtml = Mustache.render(characterPromptTemplate, data);
+        $("#user-prompt").html(characterHtml);
+
+        $("#choiceBtn").click(function(e) {
+            assignCharacters(knight, dragon);
+        });
+       
+    }
+
+    function assignCharacters(knight, dragon) {
+        var selectedCharacter = $('input[name=characters]:checked', '#characterChoice' ).val();
         if (selectedCharacter.toLowerCase() === "knight"){
             var player = knight;
             var computer = dragon;
@@ -74,50 +111,91 @@ $( document ).ready(function() {
             var computer = knight;
         }
 
-        while (player.isAlive() && computer.isAlive()) {
-            player.attack(computer);
-            if (!computer.isAlive()){
-                declareWinner(player);
-                break;
-            }
-
-            computer.attack(player);
-            if (!player.isAlive()){
-                declareWinner(computer);
-                break;
-            }
-        }
-        
+        showGameStatus(player, computer);
+        promptUserForUserAction(player, computer);
     }
 
-    
     //
-    // promptUserForCharacter
-    // Description: Asks the user which character to be
+    // promptUserForUserAction
+    // Description: Asks the user for next action
     //
-    function promptUserForCharacter(){
+    function promptUserForUserAction(player, computer){
+        var data = {actions: ['attack']}
+        var userActionTemplate = $("#userActionTemplate").text();
+        var nextMoveHtml = Mustache.render(userActionTemplate, data);
+        $("#user-prompt").html(nextMoveHtml);
 
-        // render user prompt for character with mustache
-        var data = {characters: [knight, dragon]}
-        var characterPromptTemplate = $("#characterPromptTemplate").text();
-        var characterHtml = Mustache.render(characterPromptTemplate, data);
-        $("#user-prompt").html(characterHtml);
+        $("#actionBtn").click(function(e){
+            var selectedAction = $('input[name=actions]:checked', '#nextMove' ).val();
+            performAction(selectedAction, player, computer);
+        });
+    }
 
-        $("#choiceBtn").click(playGame);
-       
+    //
+    // performAction
+    // Description: Executes the user action
+    //
+    function performAction(selectedAction, player, computer) {
+
+        if (selectedAction === "attack") {
+            var beginningComputerHealth = computer.health;
+            player.attack(computer);
+            var computerDamage = beginningComputerHealth - computer.health;
+
+            var beginningPlayerHealth = player.health;
+            computer.attack(player);
+            var playerDamage = beginningPlayerHealth - player.health;
+
+            var turnResult = {
+                firstAttacker: player.name,
+                firstAction: selectedAction,
+                firstDamage: computerDamage,
+                firstDefender: computer.name,
+                secondAttacker: computer.name,
+                secondAction: "attack",
+                secondDamage: playerDamage,
+                secondDefender: player.name
+            };  
+
+            showTurnStatus(turnResult);
+            playGame(player, computer);
+        }
+    }
+
+    //
+    // playGame
+    // Description: The characters fight to the death!
+    //
+    function playGame(player, computer){
+
+        showGameStatus(player, computer);
+        if (!computer.isAlive()) {
+            declareWinner(player);
+            return;
+        }
+
+        if (!player.isAlive()) {
+            declareWinner(computer);
+            return;
+        }
+
+        promptUserForUserAction(player, computer);
     }
 
 
     //
     // START THE GAME
     //
+    $('#startBtn').click(function() {
 
-    // our characters 
-    var sword = new Weapon("Sword", 0, 20);
-    var knight = new Character("Knight", 50, sword);
+        var sword = new Weapon("Sword", 0, 20);
+        var knight = new Character("Knight", 50, sword);
 
-    var flame = new Weapon("Flame", 0, 10);
-    var dragon = new Character("Dragon", 100, flame);
+        var flame = new Weapon("Flame", 0, 10);
+        var dragon = new Character("Dragon", 100, flame);
 
-    promptUserForCharacter();
+        promptUserForCharacter(knight, dragon);
+
+    });
+
 });
