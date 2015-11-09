@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<link rel="stylesheet" type="text/css" href="normal.css">
+	<link rel="stylesheet" type="text/css" href="style.css">
+<body>
+	<div id="container">
+	<audio autoplay><source src='sounds/duelOfTheFates.mp3'></source></audio>
+		<div id="header">
+		<h1>StarWars Legends</h1>
+		</div>
+		<div id="body">
+			<div class="player1">
+			<progress id="obiHp" value="100" max="100"></progress>
+			<img src="images/obi.jpg">
+			<button class="attack">Saber Slash</button>
+			<button class="secondary">Force Push</button>
+			<button class="special">Force Awaken</button>
+			</div>
+
+			<form class="battle"></form>
+
+			<div class="player2 hidden">
+			<progress id="vaderHp" value="100" max="100"></progress>
+			<img src="images/vader.png">
+			<button class="attack">Saber Slash</button>
+			<button class="secondary">Force Choke</button>
+			<button class="special">Sith Ligthning</button>
+			</div>
+		</div>
+	</div>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+	<script type="text/javascript" src="game.js"></script>
+</body>
+</html>

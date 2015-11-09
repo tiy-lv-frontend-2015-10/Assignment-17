@@ -1,0 +1,73 @@
+#container{
+	background-color: black;
+	height: auto;
+}
+#header h1{
+	font-family: 'ITC Serif Gothic';
+	text-align: center;
+	color: white;
+	padding-top: 0px;
+	margin: 0px;
+}
+
+#body{
+	background: url("images/Fedspheretroops.jpg") no-repeat;
+	background-size: contain;
+	width: auto;
+	height: 48em;
+	background-color:black;
+}
+#body img{
+	height: 300px;
+	width: 325px;
+}
+#obiHp{
+	width: 20.3em;
+	height: 2em;
+	background-color:#99E1FC;
+	margin-bottom: 20px;
+	border: 3px solid gold;
+}
+
+#vaderHp{
+	background: red;
+	width: 20.3em;
+	height: 2em;
+	margin-bottom: 20px;
+	border: 3px solid gold;
+
+}
+button{
+	width: 5.5em;
+	height: 3em;
+	margin: 7.5px;
+	
+}
+.player1{
+	position: absolute;
+	top: 2em;
+	left: 3em;
+	display: inline-block;
+	width: 20em;
+	margin: 5em;
+}
+.battle{
+	display: inline-block;
+	position: absolute;
+	top: 27em;
+	left: 31em;
+	height: 5em;
+	width: 25em;
+	margin: 1em;
+	background-color: lightgrey;
+	opacity: .7;
+}
+
+.player2{
+	position: absolute;
+	top: 2em;
+	right: 3em;
+	display: inline-block;
+	width: 20em;
+	margin: 5em;
+}
