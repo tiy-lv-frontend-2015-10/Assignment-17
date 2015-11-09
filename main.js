@@ -22,6 +22,10 @@ $( document ).ready(function() {
     Character.prototype.attack = function attack(opponent) {
         var weaponDamage = this.weapon.damage();
         opponent.health = opponent.health - weaponDamage;
+        if (opponent.health < 0){
+            opponent.health = 0
+        }
+
         console.log(this.name + " just attacked " + opponent.name + " for " + weaponDamage + " points!");
         console.log(opponent.name + "'s health is now " + opponent.health);
         console.log("");
@@ -66,8 +70,16 @@ $( document ).ready(function() {
     // declareWinner
     // Description: Declares the winner of the game
     //
-    function declareWinner(player){
-        alert(player.name + " is the winner!!");
+    function declareWinner(winningPlayer, isYou){
+        var data = { name: winningPlayer.name,
+                     isYou: isYou};
+        var winnerTemplate = $("#winnerTemplate").text();
+        var winnerHtml = Mustache.render(winnerTemplate, data);
+        $("#user-prompt").html(winnerHtml);
+
+        $('#restartBtn').click(function(){
+            location.reload();
+        })
     }
 
     function showGameStatus(player, computer){
@@ -169,27 +181,28 @@ $( document ).ready(function() {
             };  
 
             showTurnStatus(turnResult);
-            playGame(player, computer);
+            checkForWinner(player, computer);
         }
     }
 
     //
-    // playGame
+    // checkForWinner
     // Description: The characters fight to the death!
     //
-    function playGame(player, computer){
+    function checkForWinner(player, computer){
 
         showGameStatus(player, computer);
         if (!computer.isAlive()) {
-            declareWinner(player);
+            declareWinner(player, true);
             return;
         }
 
         if (!player.isAlive()) {
-            declareWinner(computer);
+            declareWinner(computer, false);
             return;
         }
 
+        // no winner, do it all again
         promptUserForUserAction(player, computer);
     }
 
