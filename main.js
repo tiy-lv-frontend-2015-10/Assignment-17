@@ -1,5 +1,6 @@
 $(document).ready(function(){
 
+var audio2 = new Audio("assets/battle.mp3");
 
 function Player() {
   	this.name;
@@ -45,6 +46,7 @@ function Player() {
 
 	$("#dead_hp").html(p1.health);
 	$("#z_hp").html(p2.health);
+
 
 	$("#punch").on('click', function(){
 		p1.punch(p2);
