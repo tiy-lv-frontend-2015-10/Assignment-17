@@ -2,7 +2,9 @@ $( document ).ready(function() {
 
   var saber = new Audio ('sounds/lightsaberClash.mp3');
   var ligthning = new Audio ('sounds/forceLightning.mp3');
-  var force = new Audio ('sounds/forceAwaken.mp3')
+  var force = new Audio ('sounds/forceAwaken.mp3');
+  var push = new Audio ('sounds/push.mp3');
+  var choke = new Audio ('sounds/forceChoke.mp3')
 
 
 var Character = function(name, hp, a1, sec, sp) {
@@ -19,7 +21,7 @@ var Character = function(name, hp, a1, sec, sp) {
       opponent.hp -= 10;
       saber.play();
       alert(this.name + " used " + a1 + " and it hit ");
-    } else if (hitChance >.7){
+    }else if (hitChance >.7){
       opponent.hp -=25;
       saber.play();
       alert(this.name + " used " + a1 + " attack and it was CRITICAL!!!!");
@@ -33,7 +35,7 @@ var Character = function(name, hp, a1, sec, sp) {
     if (hitChance > .4 && hitChance <.8) {
       opponent.hp -= 20;
       alert(this.name + " landed " + sec + " !!!!!");
-    } else if (hitChance >.81){
+    }else if (hitChance >.81){
       opponent.hp -= 45;
       alert(this.name + " just connected with a burtal " + sec +" !!!");
     }else{
@@ -69,6 +71,7 @@ var DarthVader = new Character("Darth Vader", 100, "Saber Slash", "Force Choke",
   });
 
   $('.player1 .secondary').on('click', function() {
+    push.play();
     $('.player1 button').hide();
     $('.player2 button').show();
     ObiWan.secondary(DarthVader);
@@ -109,6 +112,7 @@ var DarthVader = new Character("Darth Vader", 100, "Saber Slash", "Force Choke",
   });
 
   $('.player2 .secondary').on('click', function() {
+    choke.play();
     $('.player2 button').hide();
     $('.player1 button').show();
     DarthVader.secondary(ObiWan)
@@ -134,40 +138,3 @@ var DarthVader = new Character("Darth Vader", 100, "Saber Slash", "Force Choke",
   });
 
 });
-
-/*
-var ObiWan  = new Character("Obi Wan", 100, "Sabre Slash", "Force Push", "Force Awaken");
-var DarthVader = new Character("Darth Vader", 100, "Sabre Slash", "Force Choke", "Sith Ligthning");
-ObiWan.attack(DarthVader)
-alert(DarthVader.name + " has " + DarthVader.hp + " hp left");
-DarthVader.attack(ObiWan)
-ObiWan.special(DarthVader)
-alert(DarthVader.name + " has " + DarthVader.hp + " hp left");
-DarthVader.special(ObiWan)
-alert(ObiWan.name + " has " + ObiWan.hp + " hp left");
-ObiWan.secondary(DarthVader)
-alert(DarthVader.name + " has " + DarthVader.hp + " hp left");
-DarthVader.secondary(ObiWan)
-alert(ObiWan.name + " has " + ObiWan.hp + " hp left");
-ObiWan.attack(DarthVader)
-alert(DarthVader.name + " has " + DarthVader.hp + " hp left");
-DarthVader.attack(ObiWan)
-alert(ObiWan.name + " has " + ObiWan.hp + " hp left");
-ObiWan.secondary(DarthVader)
-alert(DarthVader.name + " has " + DarthVader.hp + " hp left");
-DarthVader.secondary(ObiWan)
-alert(ObiWan.name + " has " + ObiWan.hp + " hp left");
-ObiWan.special(DarthVader)
-alert(DarthVader.name + " has " + DarthVader.hp + " hp left");
-DarthVader.special(ObiWan)
-alert(ObiWan.name + " has " + ObiWan.hp + " hp left");
-ObiWan.secondary(DarthVader)
-alert(DarthVader.name + " has " + DarthVader.hp + " hp left");
-DarthVader.secondary(ObiWan)
-alert(ObiWan.name + " has " + ObiWan.hp + " hp left");
-ObiWan.special(DarthVader)
-alert(DarthVader.name + " has " + DarthVader.hp + " hp left");
-DarthVader.special(ObiWan)
-alert(ObiWan.name + " has " + ObiWan.hp + " hp left");
-});
-*/

@@ -44,12 +44,18 @@ button{
 	
 }
 .player1{
+	position: absolute;
+	top: 2em;
+	left: 3em;
 	display: inline-block;
 	width: 20em;
 	margin: 5em;
 }
 .battle{
 	display: inline-block;
+	position: absolute;
+	top: 27em;
+	left: 31em;
 	height: 5em;
 	width: 25em;
 	margin: 1em;
@@ -58,6 +64,9 @@ button{
 }
 
 .player2{
+	position: absolute;
+	top: 2em;
+	right: 3em;
 	display: inline-block;
 	width: 20em;
 	margin: 5em;
