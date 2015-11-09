@@ -1,6 +1,7 @@
 body {
 	width: 100%;
 	background: url("assets/deadpool_logo.jpg") no-repeat;
+	background-position: center;
 }
 
 #header {
