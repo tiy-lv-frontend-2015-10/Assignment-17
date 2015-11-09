@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Dragon Slayer Game</title>
+    <link rel="stylesheet" href="main.css">
+</head>
+<body>
+    
+    <div class="wrapper">
+        <div id="game-status"></div>
+        <div id="turn-status"></div>
+        <div id="user-prompt">
+            <div id="game-title">Welcome to Dragon Slayer</div>
+            <div id="game-instructions">Press Start to Begin</div>
+            <button id="startBtn">START</button>
+        </div>
+        <div id="next-move"></div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mustache.js/2.2.0/mustache.min.js"></script>
+    <script src="main.js"></script>
+
+    <script type="x-tmpl-mustache" id="characterPromptTemplate">
+        <div class="section-title">Choose Your Character</div>
+        <div id="characterChoice">
+            {{#characters}}
+                <div class="choice-input">
+                    <input name="characters" value="{{name}}" type="radio">{{name}}</input>
+                </div>
+            {{/characters}}
+            <div><button id="choiceBtn">Choose</button></div>
+        </div>
+    </script>
+
+    <script type="x-tmpl-mustache" id="showGameStatusTemplate">
+        <div class="section-title">Game Status</div>
+        {{#characters}}
+            <div class="character-status">{{name}}s health: {{health}}</div>
+        {{/characters}}
+    </script>
+
+    <script type="x-tmpl-mustache" id="showTurnStatusTemplate">
+        <div class="section-title">Turn Status</div>
+        {{#actions}}
+            <div class="turn-status">{{attacker}} {{action}}s this turn. {{defender}} loses {{damage}} health</div>
+        {{/actions}}
+    </script>
+
+    <script type="x-tmpl-mustache" id="userActionTemplate">
+        <div class="section-title">Choose your next move</div>
+        <div id="nextMove">
+            {{#actions}}
+            <div>
+                <input name="actions" value="{{.}}" type="radio">{{.}}</input>
+            </div>
+            {{/actions}}
+            <div><button id="actionBtn">Choose</button></div>
+        </div>
+    </script>
+
+    <script type="x-tmpl-mustache" id="winnerTemplate">
+            {{#isYou}}
+            <div id="winner" class="section-title green">You Win!</div>
+            {{/isYou}}
+            {{^isYou}}
+            <div id="winner" class="section-title red">{{name}} wins. You Lose!</div>
+            {{/isYou}}
+
+        
+        <div><button id="restartBtn">Restart</button></div>
+    </script>
+</body>
+</html>
