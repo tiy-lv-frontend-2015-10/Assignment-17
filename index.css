@@ -1,0 +1,73 @@
+body{background-color: lightslategrey;}
+
+
+#iphone img{display: inline-block;
+    position: absolute;
+    width: 40%;
+    bottom:50px;
+}
+
+#samsung img{display: inline-block;
+    position:absolute;
+    left:800px;
+    top: 30px;
+    width: 30%;
+}
+
+#butt{position: absolute;
+    left:100px;
+    top:600px;
+   
+}
+
+#butt button{
+    padding: 30px;
+}
+
+#butt2{position: absolute;
+    left:65%;
+    top:600px;
+   
+}
+
+#butt2 button{
+    padding: 30px;
+}
+
+#log{position: relative;
+    background-color: white;
+    display: inline-block;
+    width: 300px;
+    height:300px;
+    left: 480px;
+    top: 100px;
+    opacity: 0.5;
+
+}
+
+#contestants ul{position: absolute;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    left: 445px;
+    top:-5px;
+    
+}
+
+#contestants li{
+    display: inline;
+    font-size: 50px;
+
+}
+
+div
+{
+  font-weight: bold;
+  color: #000000;
+}
+
+
+#status{position: relative;
+margin-left: 530px;
+font-size: 30px;
+bottom: 260px;}
