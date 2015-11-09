@@ -12,7 +12,7 @@ function Player() {
         var randomNum = Math.floor((Math.random() * 10) + 1);
         //opponent.health -= randomNum; 
         var score = opponent.health - randomNum;
-        
+    
     if (p1.attack) {
     document.querySelector("#peterPointsBtn").innerHTML = score;//p1.health
     }
@@ -25,7 +25,7 @@ function Player() {
     if (p2.health <= 0) {
         document.getElementById("winner").innerHTML = "Peter Wins!";
     }
-}
+  }
 };
 //Player.prototype.image = function(images) {///////////////////
     
@@ -38,14 +38,14 @@ p1.name = "Peter";
 p2.name = "Chicken";
 
 $("#punchesChickenBtn").on('click', function() { p1.attack(p2); });
-$("#throwChickenBtn").on('click', function() { p1.attack(p2); });
-$("clubChickenBtn").on('click', function() { p1.attack(p2); });
-$("strangleChicken").on('click', function() { p1.attack(p2); });
+$("#throwsChickenBtn").on('click', function() { p1.attack(p2); });
+$("#clubsChickenBtn").on('click', function() { p1.attack(p2); });
+$("#stranglesChickenBtn").on('click', function() { p1.attack(p2); });
 
-$("electrocutePeter").on('click', function() { p2.attack(p1); });
-$("crushPetersHead").on('click', function() { p2.attack(p1); });
-$("kickPetersFace").on('click', function() { p2.attack(p1); });
-$("punchesPeter").on('click', function() { p2.attack(p1); });
+$("#electrocutesPeterBtn").on('click', function() { p2.attack(p1); });
+$("#crushesPetersHeadBtn").on('click', function() { p2.attack(p1); });
+$("#kicksPetersFaceBtn").on('click', function() { p2.attack(p1); });
+$("#punchesPeterBtn").on('click', function() { p2.attack(p1); });
 
 //Player.attack.apply(p1, p2);    
     
