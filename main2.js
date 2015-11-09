@@ -4,28 +4,27 @@ $("#playBtn").on('click', function() {
     location.reload();
 });
     
-
-//var pPoints = document.querySelector("#peterPointsBtn");
-//var cPoints = document.querySelector("#chickenPointsBtn");
     
 function Player() {
     this.name;
     this.health = 50; 
     this.attack = function(opponent) {
         var randomNum = Math.floor((Math.random() * 10) + 1);
-        opponent.health -= randomNum; 
+        //opponent.health -= randomNum; 
+        var score = opponent.health - randomNum;
         
+    if (p1.attack) {
     document.querySelector("#peterPointsBtn").innerHTML = p1.health;
-    //document.getElementById("peterPointsBtn".value).innerHTML = p1.health;
-    //$("#chickenPointsBtn").html(p2.health);
-    document.querySelector("#chickenPointsBtn").innerHTML = p2.healh;
-    
-    /*if (p1.health <= 0) {
+    }
+    if (p2.attack) {
+    document.querySelector("#chickenPointsBtn").innerHTML = p2.health;
+    }
+    if (p1.health <= 0) {
         document.getElementById("winner").innerHTML = "Chicken Wins!";
     }
     if (p2.health <= 0) {
         document.getElementById("winner").innerHTML = "Peter Wins!";
-    }*/
+    }
 }
 };
 //Player.prototype.image = function(images) {///////////////////
