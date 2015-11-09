@@ -14,10 +14,10 @@ function Player() {
         var score = opponent.health - randomNum;
         
     if (p1.attack) {
-    document.querySelector("#peterPointsBtn").innerHTML = p1.health;
+    document.querySelector("#peterPointsBtn").innerHTML = score;//p1.health
     }
     if (p2.attack) {
-    document.querySelector("#chickenPointsBtn").innerHTML = p2.health;
+    document.querySelector("#chickenPointsBtn").innerHTML = score;//p2.health
     }
     if (p1.health <= 0) {
         document.getElementById("winner").innerHTML = "Chicken Wins!";
