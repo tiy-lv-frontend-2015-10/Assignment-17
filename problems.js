@@ -43,7 +43,7 @@ var problems = [
 {id: 41, alt1: 60, alt2: 63,  name:  "Need Input!", image: "assets/images/ShortCircuit2.jpg "},
 {id: 42, alt1: 63, alt2: 61,  name:  "Need data from remote API", image: "assets/images/cloud-API.jpg"},
 {id: 43, alt1: 61, alt2: 57,  name:  "Flat Tire", image: "assets/images/duct-tape.jpg"},
-{id: 44, alt1: 58, alt2: 68,  name:  "Neighbors having loud sex", image: "assets/images/loud-sex.jpg"},
+{id: 44, alt1: 58, alt2: 68,  name:  "Neighbors having loud sex", image: "assets/images/loud-sex.jpeg"},
 {id: 45, alt1: 51, alt2: 73,  name:  "Destroy the evidence", image: "assets/images/FORMAT01.jpg"},
 {id: 46, alt1: 57, alt2: 62,  name:  "Suicide Prevention", image: "assets/images/git-push.jpg"},
 {id: 47, alt1: 53, alt2: 9,  name:  "Call for an encore", image: "assets/images/encore.jpg"},

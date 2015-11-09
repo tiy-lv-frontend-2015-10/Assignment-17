@@ -10,7 +10,17 @@
 	<div class="container">
 		<h1 id="main-title">What's your Problem?</h1>
 
-		<div id="intro"></div>
+		<div id="intro">
+
+			<p>...is a Mad-libs style guessing game. On each turn, you'll be presented with a situation/state--a 'Problem.' Your problem may be something bad, e.g. your house is on fire, you're caught in a flash flood, or your girlfriend is angry with you--or it might be something good, like your favorite movie-star sex symbol standing next to your bed, naked and smiling at you.</p>
+
+			<p>...but you don't KNOW what your problem is. The problem is hidden behind 'Door number 4.' What you HAVE are  6 buttons containing possible solutions. One of those buttons is the correct 'solution' to your problem (life's not that simple, but hey--this is just a video game, alright?). Two more are 'partial' or 'alternate' solutions. The other three are completely random, and may or may not have anything to do with your problem--but they could be perfectly reasonable solutions to somebody ELSE'S problem. Hehe. :-)</p>
+
+			<p>Your task is to look at the six choices, and get a general idea what your problem might be--then click one of the choice buttons that seems like it might solve the problem.  If you guess correctly, you win 10 points.  If you choose one of the 'alternate' solutions, you win either 5 or 3 points, respectively.  You'll have 10 chances to accumulate as many points as possible. A perfect score is 100--but that's unlikely to occur outside laboratory conditions--after all, you have no clue what your problem is. Trust me, you'll be lucky to score over 25.  But hopefully you'll have fun trying.  Good luck!</p>
+
+			<!-- <button id="startTheGame">Start Game</button> -->
+
+		</div>
 		<div id="game-start"></div>
 		<div id="turnBoard"></div>
 
@@ -32,7 +42,7 @@
 	<script src="main.js"></script>
 	<script src="actions.js"></script>
 	<!-- MUSTACHE*********************************************************** -->
-	<script type="x-tmpl-mustache" id="game-intro">
+	<!-- <script type="x-tmpl-mustache" id="game-intro">
 		<form id="name-input">
 				<label for="player-name" id="p-label">Enter your name: =></label>
 					<input type="text" name="player-name" id="player-name" placeholder='Your Name'>
@@ -43,29 +53,34 @@
 			<p id='par2'>{{par2}}</p>
 			<p id='par3'>{{par3}}</p>
 		{{/introData.splash}}
-	</script>
+	</script> -->
 	<script type="x-tmpl-mustache" id="round-start">
 		<p>Okay, {{name}}, {{text}}</p>
 		<button id="startTheGame">Start the Game</button>
 	</script>
 	<script type="x-tmpl-mustache" id="turn-template">
-		<div id="mainstage"><img src="{{turnData[0].image}}" />
-			<p>{{turnData[0].name}}</p>
-		</div>
+
 		<div id="three-left">
 			<ul id="left">
-			<li class="choice-button" id="c0">{{turnData[1][0].name}}</li>
-			<li class="choice-button" id="c1">{{turnData[1][1].name}}</li>
-			<li class="choice-button" id="c2">{{turnData[1][2].name}}</li>
+			<li class="choice-button" id="c0">{{s1.name}}</li>
+			<li class="choice-button" id="c1">{{s2.name}}</li>
+			<li class="choice-button" id="c2">{{s3.name}}</li>
 			</ul>
+		</div>
+		<div id='pl-holder'>?</div>
+		<div id="mainstage"><img src="{{problem.image}}" />
+			<p>{{problem.name}}</p>
 		</div>
 		<div id="three-right">
 			<ul id="right">
-			<li class="choice-button" id="c3">{{turnData[1][3].name}}</li>
-			<li class="choice-button" id="c4">{{turnData[1][4].name}}</li>
-			<li class="choice-button" id="c5">{{turnData[1][5].name}}</li>
+			<li class="choice-button" id="c3">{{s4.name}}</li>
+			<li class="choice-button" id="c4">{{s5.name}}</li>
+			<li class="choice-button" id="c5">{{s6.name}}</li>
 			</ul>
+
 		</div>
+
+
 	</script>
 </body>
 </html>

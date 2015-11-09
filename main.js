@@ -1,38 +1,28 @@
+$(document).ready(function(){
+
+$('#intro').fadeIn(1500);
+$('game-start').fadeIn(2500);
+
 //Player object
-
 function Player(){
-
 	this.name = '';
 	// this.gender = gender;
 	this.score = 0;
 }
-
 //Game object
-
 function Game() {
 	this.turnCount = 0;
-
 }
 
-function Question() {
-	this.currentProblem = {};
-	this.remainingAnswers = solutions;
-
-}
+// function Question() {
+// 	this.currentProblem = {};
+// 	this.remainingAnswers = solutions;
+//
+// }
 // Create Player -- get name,(opt gender)
-
-
-
-
-var player1 = new Player();
-
-
-
-
-
- Game.prototype.quizSet = [];
-
-
+var currentPlayer = new Player();
+currentPlayer.name = "Herkimer";
+Game.prototype.quizSet = [];
 
 //set New Problem for deployment.
 
@@ -56,8 +46,8 @@ function getNewGameSet() {
 	}
 
 
-	console.log(currentGame.quizSet);
-	console.log(currentGame.quizSet[0][1][5]);
+	// console.log(currentGame.quizSet);
+	// console.log(currentGame.quizSet[0][1][5]);
 
 //**Find Main Solution (for currentProblem), + Alternates 1 & 2 *************
 //***************************************************************************
@@ -99,7 +89,7 @@ function getSolutions(problem) {
 			top3.push(alt2[0]);
 			remainingSolutions.splice((remainingSolutions.indexOf(alt2[0])), 1);
 
-//****** Generate 3 more random (incorrect) solutions to fill array of 6
+//****** Generate 3 more random (unrelated-filler) solutions to fill array of 6
 //***********************************************************************
 		var next3 = [];
 
@@ -115,7 +105,8 @@ function getSolutions(problem) {
 			}
 	// Wrap it all in one array of objects ************************************
 		var qPanel = top3.concat(next3);
-	// OK, now mix them up ****************************************************
+	// OK, now MIX THEM UP so the answer isn't the top left every time
+	//****************************************************
 		var sortedSolutions = qPanel.sort(function(a,b){
  	 	if (a.id > b.id) {
  	 		return 1;
@@ -129,28 +120,32 @@ function getSolutions(problem) {
 		return sortedSolutions;
 	}// End of function getSolutions........
 
+var currentGame = new Game();
 
 function playGame() {
-var currentGame = new Game();
-currentGame.quizSet = getNewGameSet();
-	for (var i = 1; i < 11; i++) {
-		currentGame.turnCount += 1;
-		displayTurn(i);
-		var turnVal = executeTurn(currentGame.quizSet[i]);
-		displayResult(currentGame.quizSet[i], turnVal);
-		$('#next-turn').click(function(e){
-			e.preventDefault();
-		});
+	var count = currentGame.turnCount;
+	currentGame.quizSet = getNewGameSet();
+	console.log(currentGame.quizSet);
+	if (count < 10) {
+		displayTurn(count);
+		var turnVal = executeTurn(currentGame.quizSet[count]);
+		// displayResult(currentGame.quizSet[i], turnVal);
+		// $('#next-turn').click(function(e){
+		// 	e.preventDefault();
+		// });
 	}
+
+
 }
 
+
 function executeTurn(set) {
+	var turnScore = 0;
 	$('.choice-button').click(function(e){
 		e.preventDefault();
 		var ch =	$(this).prop('id').substr(1,1);
 		var chN = Number(ch);
 		var thisChoice = set[1][chN];
-		var turnScore = 0;
 			if (thisChoice.id === set[0].id) {
 				turnScore = 10;
 			}else if (thisChoice.id === set[0].alt1){
@@ -160,27 +155,75 @@ function executeTurn(set) {
 			}else {
 				turnScore = 0;
 			}
+			return turnScore;
 	});
-	return turnScore;
+	console.log(turnScore);
+
 }
 
+//*******  ACTIONS *************************************************************
+//******************************************************************************
+// console.log(currentPlayer.name);
+/// ***** Enter Player Name **********************************
 
-
-
-
-
-
-// C. [
-// 		onClick, store userPick;
-// 		if userPick = mainSolution {this.score += 10;}
-// 		else if userPick.id == alt1.id {this.score += 5;}
-// 		else if userPick.id ===alt2.id {this.score += 3;}
-// 		else {this.score += 0;}
-// 		toggle display to show image & title
-// 		display turn score, total score.
+// $('#name-submit').on('click', function(e){
+// 	e.preventDefault();
+// 	currentPlayer.name = $('#player-name').val();
 //
-// 		if turns === 10 {"Game Over" , displayTotalScore, "Good game (yada yada)"};
-// 		else {
-// 			onClick (next button) next turn.
-// 			}
-// ]
+// 	$('#game-start').show(1000);
+// });
+// console.log(currentPlayer.name);
+// Renders the Opening Splash Page*****************************
+//*************************************************************
+
+// var introData = {
+// 	introData: introText
+// };
+//
+// var introTemplate = $('#game-intro').text();
+// var introHTML = Mustache.render(introTemplate, introData);
+// $('#intro').html(introHTML);
+
+// Render the Game Start Button ***************************************
+//*********************************************************************
+var startupData = {
+	name: currentPlayer.name,
+	text: "We're ready to start the game. Press Play to begin. Good Luck!"
+};
+
+var startupTemplate = $('#round-start').text();
+var startupHTML = Mustache.render(startupTemplate, startupData);
+$('#game-start').html(startupHTML);
+
+// Start the Game ********************************************
+$('#startTheGame').on('click', function(e){
+	e.preventDefault();
+		$('#intro').toggle('puff', 800);
+		$('#game-start').fadeOut(100);
+		playGame();
+});
+
+
+// Render a Turn ******************************************************
+//*********************************************************************
+
+function displayTurn(turn) {
+	var dat = currentGame.quizSet[turn];
+var turnData = {
+  problem: dat[0],
+	s1: dat[1][0],
+	s2: dat[1][1],
+	s3: dat[1][2],
+	s4: dat[1][3],
+	s5: dat[1][4],
+	s6: dat[1][5]
+ };
+
+console.log(turnData);
+console.log(turnData.problem);
+var turnTemplate = $('#turn-template').text();
+var turnHTML = Mustache.render(turnTemplate, turnData);
+$('#turnBoard').html(turnHTML).fadeIn(4000);
+}
+
+});
