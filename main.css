@@ -1,6 +1,6 @@
 body {
 	width: 100%;
-	background: url("http://vignette2.wikia.nocookie.net/deadpool/images/5/5e/2293-marvel-deadpool-simple-logo-wallpaper-1280x1024-customity.jpg/revision/latest?cb=20110314222646") no-repeat;
+	background-image: url("assets/deadpool_logo.jpg")
 }
 
 #header {
