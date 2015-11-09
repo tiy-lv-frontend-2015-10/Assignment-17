@@ -3,6 +3,7 @@ $(document).ready(function () {
 $("#playBtn").on('click', function() {
     location.reload();
 });
+    
 
 //var pPoints = document.querySelector("#peterPointsBtn");
 //var cPoints = document.querySelector("#chickenPointsBtn");
@@ -12,16 +13,24 @@ function Player() {
     this.health = 50; 
     this.attack = function(opponent) {
         var randomNum = Math.floor((Math.random() * 10) + 1);
-        opponent.health -= randomNum;
-    
-    document.querySelector("#peterPointsBtn".value).innerHTML = p1.opponent.health;
+        opponent.health -= randomNum; 
+        
+    document.querySelector("#peterPointsBtn").innerHTML = p1.health;
     //document.getElementById("peterPointsBtn".value).innerHTML = p1.health;
-    $("#chickenPointsBtn".value).add('p2.health');
-  }
+    //$("#chickenPointsBtn").html(p2.health);
+    document.querySelector("#chickenPointsBtn").innerHTML = p2.healh;
+    
+    /*if (p1.health <= 0) {
+        document.getElementById("winner").innerHTML = "Chicken Wins!";
+    }
+    if (p2.health <= 0) {
+        document.getElementById("winner").innerHTML = "Peter Wins!";
+    }*/
+}
 };
 //Player.prototype.image = function(images) {///////////////////
     
-//}///////////// 
+//}/////////////////////////////////////////////////////////////
     
 var p1 = new Player();
 var p2 = new Player();
@@ -39,6 +48,7 @@ $("crushPetersHead").on('click', function() { p2.attack(p1); });
 $("kickPetersFace").on('click', function() { p2.attack(p1); });
 $("punchesPeter").on('click', function() { p2.attack(p1); });
 
+//Player.attack.apply(p1, p2);    
     
 //video code/////////////////////////////////////////////////////////////
 /*function PlayVideo() {

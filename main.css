@@ -15,9 +15,8 @@ h1 {
     text-align: center;
     margin: auto;
 }
-h2 {
-    text-transform: uppercase;
-    font-size: 2em;
+h2 { text-transform: uppercase; 
+    font-size: 2em; 
 }
 
 .white {
@@ -27,12 +26,12 @@ h2 {
 
 #peter_chickenDiv {}
 
-#peter {
-    float: left;
+#peter { 
+    float: left; 
 }
 
-#chicken {
-    float: right;
+#chicken { 
+    float: right; 
 }
 
 .hide {
@@ -96,7 +95,7 @@ h2 {
 }
 
 .buttonText {
-    font-size: 4em;
+    font-size: 3em;
 }
 
 /*-------------------------------scroller---------------*/
