@@ -235,38 +235,9 @@ $(document).ready(function(){
 
 });
 
-//fight game
 
 
 
-
-var Player = function () {
-  this.name;
-  this.health = 100;
-  this.attack = function (opponent) {
-    var attackOdds = Math.random();
-    if (attackOdds > .6) {
-      opponent.health -= 10;
-
-    } else {
-      $("#actionDiv").html(p1.name + " missed"+"<br/>");
-    }
-  };
-};
-var p1= new Player();
-var p2= new Player();
-
-p1.name="Yoda";
-p2.name="Darth Vader";
-
-
-$("#p1attack").on("click",function(){
-	p1.attack(p2);
-	p1.attack(p1);
-});
-
-
-(progress).val("p1.health");
 
 
 
