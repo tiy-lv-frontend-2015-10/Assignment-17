@@ -1,8 +1,5 @@
 $(document).ready(function(){
 
-$('#intro').fadeIn(1500);
-$('game-start').fadeIn(2500);
-
 //Player object
 function Player(){
 	this.name = '';
@@ -14,35 +11,29 @@ function Game() {
 	this.turnCount = 0;
 }
 
-// function Question() {
-// 	this.currentProblem = {};
-// 	this.remainingAnswers = solutions;
-//
-// }
-// Create Player -- get name,(opt gender)
+var currentGame = new Game();
 var currentPlayer = new Player();
 currentPlayer.name = "Herkimer";
 Game.prototype.quizSet = [];
+Game.prototype.problemsLeft = [];
+currentGame.problemsLeft = problems;
 
 //set New Problem for deployment.
-
-function getNewGameSet() {
-	var remainingProblems = problems;
-	var gameSet = [];
-		for (var i = 1; i < 11; i++) {
+function getNewTurnSet() {
+			var pLeft = currentGame.problemsLeft;
 			var psBundle = [];
+			var turnSet = [];
 			var currentProblem = {};
 			var currentProblemSolutions = [];
-			var min = 1, max = remainingProblems.length -1;
+			var min = 1, max = pLeft.length -1;
 		  var probNum = Math.ceil(Math.random() * (max - min)) + min;
-			currentProblem = remainingProblems[probNum];
+			currentProblem = pLeft[probNum];
 			currentProblemSolutions = getSolutions(currentProblem);
 			psBundle.push(currentProblem);
 			psBundle.push(currentProblemSolutions);
-			gameSet.push(psBundle);
-			remainingProblems.splice(remainingProblems.indexOf(currentProblem), 1);
-		}
-		return gameSet;
+			turnSet.push(psBundle);
+			pLeft.splice(pLeft.indexOf(currentProblem), 1);
+			return turnSet;
 	}
 
 
@@ -120,69 +111,65 @@ function getSolutions(problem) {
 		return sortedSolutions;
 	}// End of function getSolutions........
 
-var currentGame = new Game();
 
-function playGame() {
-	var count = currentGame.turnCount;
-	currentGame.quizSet = getNewGameSet();
-	console.log(currentGame.quizSet);
-	if (count < 10) {
-		displayTurn(count);
-		var turnVal = executeTurn(currentGame.quizSet[count]);
-		// displayResult(currentGame.quizSet[i], turnVal);
-		// $('#next-turn').click(function(e){
-		// 	e.preventDefault();
-		// });
+
+
+		function playTurn(){
+			var count = currentGame.turnCount;
+			if (count < 10) {
+			var thisTurnSet = getNewTurnSet();
+				displayTurn(thisTurnSet);
+			$('.choice-button').on('click', function(e){
+				e.preventDefault();
+				var turnScore = 0;
+				var thisChoice = $(this).data('sid');
+					if (thisChoice && thisChoice === thisTurnSet[0].id) {
+						turnScore = 10;
+					}else if (thisChoice && thisChoice === thisTurnSet[0].alt1){
+						turnScore = 5;
+					}else if (thisChoice && thisChoice === thisTurnSet[0].alt2){
+						turnScore = 3;
+					}else {
+						turnScore = 0;
+					}
+					renderScore(turnScore, thisTurnSet[count], thisChoice);
+			});
+		}
 	}
 
 
-}
+		function renderScore(turnScore, thisSet, thisAnswer) {
+			currentGame.turnCount += 1;
+			currentPlayer.score += turnScore;
+			var remaining = 10 - currentGame.turnCount;
+			var turnEndData = {
+				score: turnScore,
+				image: thisSet[0].image,
+				name: thisSet[0].name,
+				guess: thisAnswer.name,
+				player: currentPlayer.name,
+				total: currentPlayer.score,
+				left: remaining
+			};
+			var turnEndingTemplate = $('#turnEnd').text();
+			var turnEndHTML = Mustache.render(turnEndingTemplate, turnEndData);
+
+			$('#gameBoard').toggle('puff', 1000);
+			$('#resultBoard').html(turnEndHTML);
+			$('#nextTurn').on('click', function(e){
+				e.preventDefault();
+				$('#resultBoard').toggle('puff', 1000);
+				playTurn();
+			});
+		}
+
+		function endGame(){
+			console.log(currentPlayer.score);
+			console.log('bye');
+		}
 
 
-function executeTurn(set) {
-	var turnScore = 0;
-	$('.choice-button').click(function(e){
-		e.preventDefault();
-		var ch =	$(this).prop('id').substr(1,1);
-		var chN = Number(ch);
-		var thisChoice = set[1][chN];
-			if (thisChoice.id === set[0].id) {
-				turnScore = 10;
-			}else if (thisChoice.id === set[0].alt1){
-				turnScore = 5;
-			}else if (thisChoice.id === set[0].alt2){
-				turnScore = 3;
-			}else {
-				turnScore = 0;
-			}
-			return turnScore;
-	});
-	console.log(turnScore);
 
-}
-
-//*******  ACTIONS *************************************************************
-//******************************************************************************
-// console.log(currentPlayer.name);
-/// ***** Enter Player Name **********************************
-
-// $('#name-submit').on('click', function(e){
-// 	e.preventDefault();
-// 	currentPlayer.name = $('#player-name').val();
-//
-// 	$('#game-start').show(1000);
-// });
-// console.log(currentPlayer.name);
-// Renders the Opening Splash Page*****************************
-//*************************************************************
-
-// var introData = {
-// 	introData: introText
-// };
-//
-// var introTemplate = $('#game-intro').text();
-// var introHTML = Mustache.render(introTemplate, introData);
-// $('#intro').html(introHTML);
 
 // Render the Game Start Button ***************************************
 //*********************************************************************
@@ -200,30 +187,31 @@ $('#startTheGame').on('click', function(e){
 	e.preventDefault();
 		$('#intro').toggle('puff', 800);
 		$('#game-start').fadeOut(100);
-		playGame();
+		playTurn();
 });
 
 
 // Render a Turn ******************************************************
 //*********************************************************************
 
-function displayTurn(turn) {
-	var dat = currentGame.quizSet[turn];
+function displayTurn(turnSet) {
+	var dat = turnSet;
+	console.log(dat);
 var turnData = {
-  problem: dat[0],
-	s1: dat[1][0],
-	s2: dat[1][1],
-	s3: dat[1][2],
-	s4: dat[1][3],
-	s5: dat[1][4],
-	s6: dat[1][5]
+  problem: dat[0][0],
+
+	s0: dat[0][1][0],
+	s1: dat[0][1][1],
+	s2: dat[0][1][2],
+	s3: dat[0][1][3],
+	s4: dat[0][1][4],
+	s5: dat[0][1][5],
+	count: currentGame.turnCount + 1
  };
 
-console.log(turnData);
-console.log(turnData.problem);
 var turnTemplate = $('#turn-template').text();
 var turnHTML = Mustache.render(turnTemplate, turnData);
-$('#turnBoard').html(turnHTML).fadeIn(4000);
+$('#gameBoard').html(turnHTML).fadeIn(4000);
 }
 
 });

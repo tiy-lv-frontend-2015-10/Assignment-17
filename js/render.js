@@ -33,5 +33,5 @@
 // 	};
 // 	var turnTemplate = $('#turn-template').text();
 // 	var turnHTML = Mustache.render(turnTemplate, turnData);
-// 	$('#turnBoard').html(turnHTML);
+// 	$('#gameBoard').html(turnHTML);
 // }

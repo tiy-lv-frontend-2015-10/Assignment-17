@@ -22,7 +22,8 @@
 
 		</div>
 		<div id="game-start"></div>
-		<div id="turnBoard"></div>
+		<div id="gameBoard"></div>
+		<div id="resultBoard"></div>
 
 
 	</div>
@@ -37,10 +38,10 @@
 	</script>
 	<script src="problems.js"></script>
 	<script src="solutions.js"></script>
-	<script src="intro-txt.js"></script>
-	<script src="render.js"></script>
+	<!-- <script src="intro-txt.js"></script> -->
+	<!-- <script src="render.js"></script> -->
 	<script src="main.js"></script>
-	<script src="actions.js"></script>
+	<!-- <script src="actions.js"></script> -->
 	<!-- MUSTACHE*********************************************************** -->
 	<!-- <script type="x-tmpl-mustache" id="game-intro">
 		<form id="name-input">
@@ -59,28 +60,32 @@
 		<button id="startTheGame">Start the Game</button>
 	</script>
 	<script type="x-tmpl-mustache" id="turn-template">
-
 		<div id="three-left">
-			<ul id="left">
-			<li class="choice-button" id="c0">{{s1.name}}</li>
-			<li class="choice-button" id="c1">{{s2.name}}</li>
-			<li class="choice-button" id="c2">{{s3.name}}</li>
+			<ul class="choice-list">
+			<li class="choice-button" id="c0" data-sid="{{s0.id}}">{{s0.name}}</li>
+			<li class="choice-button" id="c1" data-sid="{{s1.id}}">{{s1.name}}</li>
+			<li class="choice-button" id="c2" data-sid="{{s2.id}}">{{s2.name}}</li>
 			</ul>
 		</div>
-		<div id='pl-holder'>?</div>
-		<div id="mainstage"><img src="{{problem.image}}" />
-			<p>{{problem.name}}</p>
-		</div>
+		<div id='place-holder'>?</div>
 		<div id="three-right">
-			<ul id="right">
-			<li class="choice-button" id="c3">{{s4.name}}</li>
-			<li class="choice-button" id="c4">{{s5.name}}</li>
-			<li class="choice-button" id="c5">{{s6.name}}</li>
+			<ul class="choice-list">
+			<li class="choice-button" id="c3" data-sid="{{s3.id}}">{{s3.name}}</li>
+			<li class="choice-button" id="c4" data-sid="{{s4.id}}">{{s4.name}}</li>
+			<li class="choice-button" id="c5" data-sid="{{s5.id}}">{{s5.name}}</li>
 			</ul>
-
 		</div>
-
-
+		<p id="turnNumber">Turn number {{count}}<p>
+	</script>
+	<script type="x-tmpl-mustache" id="turnEnd">
+			<div id="displayTurnEndStuff">
+				<p>{{player}}, You answered "{{guess}}", for {{score}} points.</p>
+				<div id="mainstage"><img src="{{image}}" />
+					<p>Your problem was "{{name}}"</p>
+					<p>Your total score so far is {{total}}, with {{left}} problems remaining</p>
+					<button id='nextTurn'>Next Problem....</button>
+				</div>
+			</div>
 	</script>
 </body>
 </html>

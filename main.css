@@ -39,7 +39,9 @@ body p {
 	background: blue;
 	border-radius: 6px;
 }
-#turnBoard
+#gameBoard {
+	
+}
 
 .choice-button {
 	width: 300px;
@@ -51,7 +53,7 @@ body p {
 	color: white;
 	border-radius: 5px;
 }
-li .choice-button:hover {
+.choice-list .choice-button:hover {
 	background-color: #40E0D0;
 	color: midnightblue;
 }
@@ -64,7 +66,7 @@ li .choice-button:hover {
 	vertical-align: top;
 }
 
-#pl-holder {
+#place-holder {
 	width: 300px;
 	height: 350px;
 	display: inline-block;
@@ -80,16 +82,32 @@ li .choice-button:hover {
 	width: 400px;
 	height: 400px;
 	text-align: center;
-	padding-top: 130px;
 }
 #mainstage {
-	display: none;
+	margin: auto;
 }
 #three-right {
 	display: inline-block;
 	margin-top: 50px;
 	text-align: left;
 	vertical-align: top;
+}
+#turnNumber {
+	margin: auto;
+	text-align: center;
+	font-size: 1.1rem;
+}
+
+#nextTurn {
+	margin: auto;
+	text-align: center;
+	width: 250px;
+	height: 50px;
+	font-family: Arial, sans-serif;
+	color: white;
+	font-size: 1.1rem;
+	background: blue;
+	border-radius: 6px;
 }
 
 
