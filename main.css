@@ -1,0 +1,178 @@
+body {
+	width: 100%;
+	background: url("assets/deadpool_logo.jpg") no-repeat;
+	background-position: center;
+}
+
+#header {
+	border: 4px solid black;
+	box-shadow: 0px 5px 10px red;
+	margin: 10px;
+}
+.header {
+	color: white;
+	font-family: 'Creepster', cursive;
+	font-size: 60px;
+	margin: 10px;
+	padding-left: 40px;
+}
+
+#main{
+	width: 100%;
+	height: 750px;
+}
+
+#main_character{
+	display: inline-block;
+	width: 25%;
+}
+
+#deadpool {
+	display: none;
+	width: 92%;
+	height: 320px;
+	position: relative;
+	border: 2px solid black;
+	border-radius: 6px;
+	top: 200px;
+	left: 2%;
+}
+
+#deadpool_hp {
+	display: none;
+	position: relative;
+	font-family: 'Shadows Into Light', curisve;
+	color: white;
+	font-size: 30px;
+	left: 20px;
+	top: 180px;
+}
+
+#zombie_hp {
+	display: none;
+	position: relative;
+	font-family: 'Shadows Into Light', curisve;
+	color: white;
+	font-size: 30px;
+	left: 20px;
+	top: 180px;
+}
+
+#dead_hp{
+	display: none;
+	position: relative;
+	font-family: 'Shadows Into Light', curisve;
+	color: white;
+	font-size: 30px;
+	left: 20px;
+	top: 180px;
+}
+
+#z_hp{
+	display: none;
+	position: relative;
+	font-family: 'Shadows Into Light', curisve;
+	color: white;
+	font-size: 30px;
+	left: 30px;
+	top: 180px;
+}
+
+#buttons{
+	display: none;
+	list-style: none;
+	margin: 0px;
+	padding: 0px;
+	height: 20px;
+	font-family: 'Shadows Into Light', curisve;
+
+}
+
+#buttons li{
+	float: left;
+	position: relative;
+	border: 1px solid black;
+	box-shadow: 0px 5px 6px white;
+	margin: 10px;
+	padding: 0px;
+	left: 30px;
+	top: 200px;
+}
+
+#scrollPage{
+	display: inline-block;
+	position: relative;
+	overflow: auto;
+	background: rgba(110, 22, 21, .6);
+	border: 1px solid white;
+	border-radius: 20px;
+	width: 48%;
+	height: 220px;
+	left: 5px;
+}
+
+#action {
+	position: relative;
+	font-family: 'Shadows Into Light', cursive;
+	font-size: 17px;
+	color: white;
+	margin: auto;
+}
+
+#start{
+	position: relative;	
+	width: 40%;
+	height: 30%;
+	bottom: 10px;
+	top: 20%;
+	left: 29%;
+	border: 2px solid red;
+	border-radius: 30%;
+	background-color: #A7A7A7;
+	color: black;
+	font-family: 'Shadows Into Light', cursive;
+	font-size: 30px;
+	text-align: center;
+	cursor: pointer;
+}
+
+#start:hover {
+	background-color: black;
+	color: red;
+	border: 1px solid white;
+}
+
+#zombies {
+	display: inline-block;
+	width: 25%;
+}
+
+#zombie1 {
+	display: none;
+	width: 92%;
+	height: 320px;
+	position: relative;
+	border: 2px solid black;
+	border-radius: 6px;
+	left: 25px;
+	top: 200px;
+
+}
+
+#footer {
+	border-top: 2px solid white;
+	height: 40px;
+	text-align: center;
+}
+
+footer {
+	font-family: 'Fontdiner Swanky', cursive;
+	font-size: 20px;
+	margin-top: 20px;
+	color: white;
+}
+
+.displayNone {
+	display: none;
+}
+

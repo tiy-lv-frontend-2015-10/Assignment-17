@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Deadpool Vs Zombies</title>
+	<link rel="stylesheet" type="text/css" href="normalize.css">
+	<link rel="stylesheet" type="text/css" href="main.css">
+	<link href='https://fonts.googleapis.com/css?family=Creepster' rel='stylesheet' type='text/css'>
+	<link href='https://fonts.googleapis.com/css?family=Fontdiner+Swanky' rel='stylesheet' type='text/css'>
+	<link href='https://fonts.googleapis.com/css?family=Shadows+Into+Light' rel='stylesheet' type='text/css'>
+</head>
+<body>
+	<div id="header">
+		<p class="header">Deadpool Vs Zombies</p>
+	</div>
+	<div id="main">
+		<div id="main_character">
+			<span id="deadpool_hp">Health:</span>
+			<span id="dead_hp"></span>
+			<img id="deadpool" src="http://littlebigplanet.playstation.com/system/images/BAhbBlsHOgZmSSItMjAxMy8wMS8xMS8xNF8wOV81N185X0RlYWRwb29sUG9zZV8xLmpwZwY6BkVU/DeadpoolPose_1.jpg"/>
+			<ul id="buttons">
+				<li><button id="punch" type="button">Punch</button></li>
+				<li><button id="kick" type="button">Kick</button></li>
+				<li><button id="specialty" type="button">Specialty</button></li>
+				<li><button id="heal" type="button">Chimichanga Time!</button></li>
+			</ul>
+		</div>
+		<div id="scrollPage">
+			<div id="action"></div>
+			<p id="start" type="button">Press to Play</p>
+		</div>
+		<div id="zombies">
+			<span id="zombie_hp">Health:</span>
+			<span id="z_hp"></span>
+			<img id="zombie1" src="assets/zombie1.jpg"/>
+		</div>
+	</div>	
+	<div id="footer">
+		<footer> &copy; 2015 Chimi-Chimichanga!, Inc</footer>
+	</div>
+	<script type="text/javascript" src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
+	<script type="text/javascript" src="main.js"></script>
+	<script type="text/javascript" src="game.js"></script>
+</body>
+</html>
