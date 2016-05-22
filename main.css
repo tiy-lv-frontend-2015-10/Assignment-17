@@ -1,0 +1,119 @@
+body {
+	background: #363636;
+	font-family: Arial, sans-serif;
+	font-weight: lighter;
+}
+
+ul {
+	list-style: none;
+}
+
+body p {
+	font-size: 0.8rem;
+	color: #66FFFF;
+}
+.container {
+	width: 1200px;
+	margin: 0 auto;
+	color: #F8F8FF;
+	text-align: center;
+}
+
+#intro {
+	display: block;
+}
+
+#player-name {
+	height: 20px;
+	font-size: 0.9rem;
+}
+#p-label {
+	color: #0081FE
+}
+#startTheGame {
+	width: 250px;
+	height: 50px;
+	font-family: Arial, sans-serif;
+	color: white;
+	font-size: 1.1rem;
+	background: blue;
+	border-radius: 6px;
+}
+#gameBoard {
+	
+}
+
+.choice-button {
+	width: 300px;
+	height: 50px;
+	margin-bottom: 10px;
+	padding-top: 20px;
+	padding-left: 20px;
+	background: #20B2AA;
+	color: white;
+	border-radius: 5px;
+}
+.choice-list .choice-button:hover {
+	background-color: #40E0D0;
+	color: midnightblue;
+}
+
+#three-left {
+	display: inline-block;
+	text-align: left;
+	margin-top: 50px;
+	margin-right: 50px;
+	vertical-align: top;
+}
+
+#place-holder {
+	width: 300px;
+	height: 350px;
+	display: inline-block;
+	border-radius: 40px;
+	font-family: cursive;
+	font-size: 10.0rem;
+	color: #0081FE;
+	background: grey;
+	vertical-align: top;
+
+}
+#mainstage img {
+	width: 400px;
+	height: 400px;
+	text-align: center;
+}
+#mainstage {
+	margin: auto;
+}
+#three-right {
+	display: inline-block;
+	margin-top: 50px;
+	text-align: left;
+	vertical-align: top;
+}
+#turnNumber {
+	margin: auto;
+	text-align: center;
+	font-size: 1.1rem;
+}
+
+#nextTurn {
+	margin: auto;
+	text-align: center;
+	width: 250px;
+	height: 50px;
+	font-family: Arial, sans-serif;
+	color: white;
+	font-size: 1.1rem;
+	background: blue;
+	border-radius: 6px;
+}
+
+
+
+
+
+/*#game-start {
+	display: none;
+}*/
